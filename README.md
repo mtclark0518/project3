@@ -31,6 +31,21 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 ### Jeff
 * Front-end Angular components
 
+### Front-End Components
+* Login / Register
+* User Profile (Index of saved pallet)
+* Create By Attribute
+** Form (Dismiss -> Either / Or -> Narrow to 3 and Rank)
+** Resulting Color Pallet
+*** Color Details
+* Create By Color
+** Color Picker Form (Color Wheel, Neutral)
+** Color Details (One for color, one for neutral)
+* Colors
+* Attributes
+** Attribute Detail
+* About the App / Team Profile
+
 ## User Research
 ### Questions
 * A lot of logos utilize the color red. Why do you think that is?
@@ -41,9 +56,4 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 * If you were to start a company, what would you sell? 
 * If you could convey a feeling to the masses about your product and your company, what would you try to convey? 
 * From a mass communications standpoint, a lot of [marketing research](http://www.jstor.org/stable/3151897?seq=1#page_scan_tab_contents) has suggested that branding colors have a psychological effect on consumers viewing a brand. What would you want your branding to convey to potential customers?
-
-
-
-
-
 
