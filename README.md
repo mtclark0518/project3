@@ -19,6 +19,15 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 ### Entity Relationship Diagram (ERD)
 ![ERD](/colorpsych/assets/ERD.JPG)
 
+## Sitemap
+![SITEMAP](/sitemap.jpg)
+* color indicates same component
+
+## Wireframes
+![WIREFRAMES1](/wires1.jpg)
+
+![WIREFRAMES2](/wires2.jpg)
+
 ## Task Delegation
 ### Tyler 
 * Repo Master
