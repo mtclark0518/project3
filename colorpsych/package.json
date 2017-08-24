@@ -4,7 +4,6 @@
     "license": "MIT",
     "scripts": {
         "ng": "ng",
-        "prestart": "ng build --prod && ngc",
         "start": "ts-node src/config/server.ts",
         "build": "ng build",
         "test": "ng test",
@@ -38,6 +37,7 @@
         "passport-local": "^1.0.0",
         "pg": "^7.2.0",
         "pg-hstore": "^2.3.2",
+        "reflect-metadata": "^0.1.10",
         "rxjs": "^5.4.2",
         "sequelize": "^4.7.2",
         "sequelize-cli": "^2.8.0",
@@ -61,7 +61,7 @@
         "karma-jasmine": "~1.1.0",
         "karma-jasmine-html-reporter": "^0.2.2",
         "protractor": "~5.1.2",
-        "ts-node": "~3.2.0",
+        "ts-node": "^3.2.2",
         "tslint": "~5.3.2",
         "typescript": "~2.3.3"
     }
