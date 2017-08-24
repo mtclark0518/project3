@@ -29,6 +29,7 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 ![WIREFRAMES2](/wires2.jpg)
 
 ## Color Palette
+![COLORPALETTE](/color-palette-01.jpg)
 ### colors
 * lime green: #cddc39
 * green: #4caf50
