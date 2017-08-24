@@ -17,7 +17,7 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 
 ## Data Models
 ### Entity Relationship Diagram (ERD)
-![ERD](../assets/ERD.jpg)
+![ERD](/colorpsych/assets/ERD.JPG)
 
 ## Task Delegation
 ### Tyler 
