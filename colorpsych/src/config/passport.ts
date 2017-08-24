@@ -6,6 +6,6 @@ const LocalStrategy = passportLocal.Strategy;
 
 
 
-export {passportLocal as passport};
+export {LocalStrategy as passport};
 
 

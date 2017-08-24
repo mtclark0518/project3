@@ -2,19 +2,14 @@ import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 import { platformServer, renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
-// import { AppServerModuleNgFactory } from '../../dist/ngfactory/src/app/app-server-module.ngfactory';
-import { AppServerModuleNgFactory } from "../../dist/ngfactory/src/app/app.server.module.ngfactory";
+import { AppServerModuleNgFactory } from "../dist/ngfactory/src/app/app.server.module.ngfactory";
 
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import * as flash from 'connect-flash';
-import * as morgan from 'morgan';
-import * as session from 'express-session';
-import * as passport from 'passport';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-import { router as expressRouter } from './routes';
+import { router as expressRouter } from './config/routes';
 
 const PORT = 3000;
 
@@ -44,16 +39,6 @@ app.get('*', (req, res) => {
 });
 
 
-app.use(session({ secret: 'PROJECT-3'}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
-
-
-app.use(function(req, res, next) {
-    res.locals.currentUser = req.user;
-    next();
-});
 app.listen(PORT, () => {
     console.log('all systems go on ' + PORT);
 });

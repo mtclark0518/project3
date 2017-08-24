@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'cli-universal-demo'}),
+    BrowserModule.withServerTransition({appId: 'colorpsych'}),
     HttpModule
   ],
   providers: [],
