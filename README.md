@@ -33,15 +33,15 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 * Login / Register
 * User Profile (Index of saved pallet)
 * Create By Attribute
-	Form (Dismiss -> Either / Or -> Narrow to 3 and Rank)
-	Resulting Color Pallet
-		Color Details
+	* Form (Dismiss -> Either / Or -> Narrow to 3 and Rank)
+	* Resulting Color Pallet
+		* Color Details
 * Create By Color
-	Color Picker Form (Color Wheel, Neutral)
-	Color Details (One for color, one for neutral)
+	* Color Picker Form (Color Wheel, Neutral)
+	* Color Details (One for color, one for neutral)
 * Colors
 * Attributes
-	Attribute Detail
+	* Attribute Detail
 * About the App / Team Profile
 
 ## User Research
