@@ -2,7 +2,7 @@
 Contributors:  Ian Nordeck, Connie Kephart, Tyler Clark, Jeff Reynolds
 
 ## Scope
-## Why make this app?
+### Why make this app?
 To help people make color choices based on personality attributes, rather than on subjectivity.
 
 ### How is this app different?
@@ -14,6 +14,10 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 ### Stretch Goals
 * Render a complementary, monochromatic, analogous, triad, compound, or shades color palette based on the user's selected personality attribute(s).
 * Color accessibility
+
+## Data Models
+### Entity Relationship Diagram (ERD)
+![ERD](https://files.slack.com/files-pri/T3JDK59GW-F6UC44CP9/img_7030.jpg)
 
 ## Task Delegation
 ### Tyler 
@@ -54,4 +58,4 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 4. If you were to start a company, what would you sell? 
 	* If you could convey a feeling to the masses about your product and your company, what would you try to convey? 
 	* From a mass communications standpoint, a lot of [marketing research](http://www.jstor.org/stable/3151897?seq=1#page_scan_tab_contents) has suggested that branding colors have a psychological effect on consumers viewing a brand. What would you want your branding to convey to potential customers?
-
+### Findings
