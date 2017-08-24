@@ -3,13 +3,19 @@ import { NgModule } from '@angular/core';
 import { Http, HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
+import { MaterializeModule }  from 'angular2-materialize';
+
+import { NavigationComponent } from './navigation/navigation.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
-    HttpModule
+    HttpModule,
+    MaterializeModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
