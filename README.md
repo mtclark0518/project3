@@ -28,6 +28,34 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 
 ![WIREFRAMES2](/wires2.jpg)
 
+## Color Palette
+### colors
+* lime green: #cddc39
+* green: #4caf50
+* teal: #009688
+* blue: #2196f3
+* indigo: #3f51b5
+* purple: #9c27b0
+* magenta: #e91e63
+* red: #f44336
+* red-orange: #ff5722
+* orange: #ff9800
+* gold: #ffd600
+* yellow: #ffeb3b
+
+### neutrals
+* black: #000
+* brown: #795548
+* white: #fff
+
+### greys
+* grey 100: #f5f5f5
+* grey 300: #e0e0e0
+* grey 500: #9e9e9e
+* grey 700: #616161
+* grey 900: #212121
+
+
 ## Task Delegation
 ### Tyler 
 * Repo Master
