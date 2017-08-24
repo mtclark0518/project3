@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { Http, HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'project3'})
+    BrowserModule.withServerTransition({appId: 'cli-universal-demo'}),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

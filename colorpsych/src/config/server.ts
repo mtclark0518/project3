@@ -2,11 +2,13 @@ import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 import { platformServer, renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
+// import { AppServerModuleNgFactory } from '../../dist/ngfactory/src/app/app-server-module.ngfactory';
+import { AppServerModuleNgFactory } from "../../dist/ngfactory/src/app/app.server.module.ngfactory";
+
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as flash from 'connect-flash';
 import * as morgan from 'morgan';
-import * as cookieParser from 'cookie-parser';
 import * as session from 'express-session';
 import * as passport from 'passport';
 import { readFileSync } from 'fs';
@@ -24,7 +26,7 @@ app.use(bodyParser.json());
 
 app.use(expressRouter);
 
-const template = readFileSync(join(__dirname, '..', 'index.html')).toString();
+let template = readFileSync(join(__dirname, '..', 'dist', 'index.html')).toString();
 
 app.engine('html', (_, options, callback) => {
     const opts = { document: template, url: options.req.url };
