@@ -4,10 +4,6 @@ const db = require('../models');
 
 
 
-// import * as User from '../models/user.js'
-
-
-
 module.exports = function(passport) {
 
     passport.serializeUser(function(user, callback) {
