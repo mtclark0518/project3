@@ -47,7 +47,7 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 ## User Research
 ### Questions
 1. A lot of logos utilize the color red. Why do you think that is?
-  * Even more companies have blue logos. Do you suppose there's a reason companies choose the color blue? 
+   * Even more companies have blue logos. Do you suppose there's a reason companies choose the color blue? 
 2. Do you think the color of a company's branding has an effect on its consumers?
 3. If you were to start a company, what colors would you choose for your logo? Why?
 
