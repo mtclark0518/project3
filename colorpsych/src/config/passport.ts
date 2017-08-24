@@ -1,1 +1,11 @@
-import * as LocalStrategy from 'passport-local'.Strategy;
+import * as passportLocal from 'passport-local';
+const LocalStrategy = passportLocal.Strategy;
+
+
+
+
+
+
+export {passportLocal as passport};
+
+
