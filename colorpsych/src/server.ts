@@ -10,7 +10,7 @@ import * as bodyParser from 'body-parser';
 import * as passport from 'passport';
 import * as flash from 'connect-flash';
 import * as morgan from 'morgan';
-import * as db from './models';
+// import * as db from './models';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
