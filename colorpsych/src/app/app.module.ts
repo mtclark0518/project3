@@ -21,11 +21,11 @@ import { AppRoutingModule } from './app.routing.module';
   imports: [
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
     HttpModule,
-    MaterializeModule.forRoot(),
     BrowserAnimationsModule,
     NoopAnimationsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterializeModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
