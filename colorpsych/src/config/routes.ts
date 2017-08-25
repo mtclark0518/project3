@@ -1,5 +1,5 @@
 import * as express from 'express';
-const router = express.Router();
+const router = express.Router({caseSensitive: true, mergeParams: true, strict: true});
 
 import * as bodyParser from 'body-parser';
 
