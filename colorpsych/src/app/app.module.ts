@@ -4,6 +4,9 @@ import { Http, HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { MaterializeModule }  from 'angular2-materialize';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -15,7 +18,9 @@ import { NavigationComponent } from './navigation/navigation.component';
   imports: [
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
     HttpModule,
-    MaterializeModule.forRoot()
+    MaterializeModule.forRoot(),
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
