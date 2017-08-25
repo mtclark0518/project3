@@ -10,6 +10,8 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+     $(".button-collapse").sideNav();
   }
+
 
 }
