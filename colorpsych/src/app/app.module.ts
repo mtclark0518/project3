@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
+
 import { MaterializeModule }  from 'angular2-materialize';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +26,7 @@ import { AppRoutingModule } from './app.routing.module';
     NoopAnimationsModule,
     FormsModule,
     AppRoutingModule,
-    MaterializeModule.forRoot()
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
