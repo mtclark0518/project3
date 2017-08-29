@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+
 // import { LandingComponent } from './landing/landing';
-const routes: Routes = [
-  // { path: ' / ', component: LandingComponent }
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'authentication', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes), CommonModule ],
+  imports: [ RouterModule.forRoot(appRoutes), CommonModule ],
   exports: [ RouterModule ]
 
 })
