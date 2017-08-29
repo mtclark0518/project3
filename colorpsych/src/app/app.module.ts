@@ -12,6 +12,9 @@ import { SignupComponent } from './signup/signup.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 import { AppRoutingModule } from './app.routing.module';
+import { ClickOutsideDirective } from './click-outside.directive';
+import { CreateByAttributeComponent } from './create-by-attribute/create-by-attribute.component';
+
 
 const routes: Routes = [
   // { path: ' / ', component: LandingComponent }
@@ -36,7 +39,9 @@ const routes: Routes = [
     ByColorResultComponent,
     LoginComponent,
     SignupComponent,
-    NavigationComponent
+    NavigationComponent,
+    ClickOutsideDirective,
+    CreateByAttributeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
