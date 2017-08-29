@@ -2,20 +2,20 @@
 <h4>create by color</h4>
 
 <section class="container">
-<div class="col"></div> <!-- bkgrnd white space left -->
 
 <!-- CARD 1 -->
-<div class="card"> 
+<div class="card z-depth-5"> 
 
-	<div class="row">
-	<div class="col"></div> <!-- card white space left -->
+		<div class="card-body">
 
 		<!-- SELECT COLOR -->
-		<div class="col col-10">
+		<div class="card-title">
 			<h2>select color</h2>
+		</div>
 
+		<div class="colorWheel">
 			<!-- color wheel svg -->
-			<svg class="colorWheel" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 304 304" style="enable-background:new 0 0 304 304;" xml:space="preserve">
+			<svg class="animated rotateIn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 304 304" style="enable-background:new 0 0 304 304;" xml:space="preserve">
 				<style type="text/css">
 					.orange		{fill:#FF9800;}
 					.gold		{fill:#FFD600;}
@@ -55,6 +55,7 @@
 					<path class="teal" 
 						d="M130.6,71.5L113.3,7.3c-25.8,6.9-48.9,20.5-67.2,38.8l47.2,47.2C103.4,83,116.2,75.4,130.6,71.5z"/>
 				</a>
+
 				<a xlink:href="">
 					<path class="blue" 
 						d="M152.5,68.6c7.4,0,14.5,1,21.4,2.8L191,7.3c-12.4-3.3-25.4-5.1-38.8-5.1S125.7,4,113.3,7.3l17.2,64.3
@@ -82,18 +83,14 @@
 						d="M211.2,211.2c-10.2,10.2-23.1,17.7-37.5,21.5l17.3,64.4c25.8-6.9,48.9-20.5,67.2-38.8L211.2,211.2z"/>
 				</a>
 			</svg> <!-- end color wheel svg -->
+		</div> <!-- end of color wheel div -->
 
-		</div> <!-- end col -->
-
-	<div class="col"></div> <!-- card white space right -->
-	</div> <!-- end of row -->
-
-	<!-- SELECT NEUTRAL COLOR -->
-	<div class="row">
-	<div class="col"></div> <!-- card white space left -->
-
-		<div class="col col-lg-6">
+		<!-- SELECT NEUTRAL COLOR -->
+		<div class="card-title">
 			<h2>select neutral</h2>
+		</div>
+
+		<div>
 			<svg width="32%" height="200">
 				<a xlink:href="">
 					<rect width="200" height="200" style="fill:#000;" />
@@ -111,14 +108,14 @@
 			</svg>
 		</div>
 
-	<div class="col"></div> <!-- card white space right -->
-	</div> <!-- end of row -->
 
-	<div class="col col-lg-6">
-		<input type="button" name="set palette" value="set palette">
+	<div class="col-6">
+		<button type="button" class="btn btn-lg btn-elegant waves-light hoverable" mdbRippleRadius>set palette</button>
 	</div>
+
+	</div> <!-- end card-body -->
+
 
 </div> <!-- end of card -->
 
-<div class="col"></div> <!-- bkgrnd white space right -->
 </section>
