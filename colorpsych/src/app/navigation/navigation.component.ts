@@ -1,12 +1,12 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
-
-import { } from 'angular-bootstrap-md';
+import { ClickOutsideDirective } from '../click-outside.directive';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
-})
+ })
+
 export class NavigationComponent implements OnInit  {
 
 	navExpanded = false;
