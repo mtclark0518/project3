@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-navigation',

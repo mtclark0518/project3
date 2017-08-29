@@ -20,8 +20,6 @@
             "dom"
         ],
         "types": [
-            "jquery",
-            "materialize-css"
         ]
     }
 }
