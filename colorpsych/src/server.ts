@@ -40,8 +40,6 @@ app.engine('html', (_, options, callback) => {
     .then(html => callback(null, html));
 });
 
-
-
 app.set('view engine', 'html');
 app.set('views', 'src');
 
