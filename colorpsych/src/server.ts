@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 import { platformServer, renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
-import { AppServerModuleNgFactory } from "../dist/ngfactory/src/app/app.server.module.ngfactory";
+import { AppServerModuleNgFactory } from '../dist/ngfactory/src/app/app.server.module.ngfactory';
 
 import * as express from 'express';
 import * as session from 'express-session';
@@ -10,7 +10,7 @@ import * as bodyParser from 'body-parser';
 import * as passport from 'passport';
 import * as flash from 'connect-flash';
 import * as morgan from 'morgan';
-// import * as db from './models';
+// import class db from './models';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
@@ -49,7 +49,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-require('./config/passport.js')(passport); 
+require('./config/passport.js')(passport);
 
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user;

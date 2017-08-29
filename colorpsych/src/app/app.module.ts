@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
+import { AuthenticationModule } from './authentication/authentication.module';
+
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app.routing.module';
@@ -14,7 +16,9 @@ import { AppRoutingModule } from './app.routing.module';
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
     HttpModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthenticationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
