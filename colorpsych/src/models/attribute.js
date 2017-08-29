@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize){
-  var model = sequelize.define("color", {
+  var model = sequelize.define("attribute", {
     id: { 
       type: Sequelize.INTEGER, 
       primaryKey: true 
@@ -8,27 +8,17 @@ module.exports = function(sequelize, Sequelize){
       type: Sequelize.STRING,
       notNull: true
     },
-    isNeutral: {
-      type: Sequelize.BOOLEAN,
-      notNull: true
+    description: { 
+      type: Sequelize.STRING 
     },
-    hex: {
-      type: Sequelize.STRING,
-      notNull: true
+    complement: { 
+      type: Sequelize.STRING 
     },
-    rgb: {
-      type: Sequelize.STRING,
-      notNull: true
-    },
-    cymk: {
-      type: Sequelize.STRING,
-      notNull: true
-    },
-    attrib_id: {
+    color_id: {
       type: Sequelize.INTEGER,
 
       references: {
-        model: Attribute,
+        model: Color,
         key: 'id',
 
         // This declares when to check the foreign key constraint. PostgreSQL only.

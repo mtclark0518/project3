@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+
+import { NavigationComponent } from './navigation/navigation.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
