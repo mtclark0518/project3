@@ -1,0 +1,65 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../../styles.scss';
+
+nav {
+	height: 60px;
+	width: 100%;
+	border-bottom: 1px solid #fff;
+	background: $grey900;
+		ul {
+			position: absolute;
+			top: 60px;
+			left: 0;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+			background: $grey700;
+			li {
+				width: 100%;
+				height: 60px;
+				border-bottom: 1px solid #fff;
+			}
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 20px 0 0 10%;
+				color: #fff;
+				text-decoration: none;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: .1em;
+				-webkit-transition: background .6s, color .6s;
+				-moz-transition: background .6s, color .6s;
+				-ms-transition: background .6s, color .6s;
+				-o-transition: background .6s, color .6s;
+				transition: background .6s, color .6s;
+			}
+			a:hover {
+				background: $grey500;
+				color: $grey900;
+				-webkit-transition: background .4s, color .4s;
+				-moz-transition: background .4s, color .4s;
+				-ms-transition: background .4s, color .4s;
+				-o-transition: background .4s, color .4s;
+				transition: background .4s, color .4s;
+			}
+		}
+		@media(min-width: 1025px) {
+
+		}
+}
+
+button {
+	background: transparent;
+	border: none;
+	i {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		font-size: 2em;
+		color: #fff;
+	}
+}
+
