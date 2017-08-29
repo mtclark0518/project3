@@ -31,23 +31,23 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 ## Color Palette
 ![COLORPALETTE](/color-palette-01.jpg)
 ### colors
-* lime green: #cddc39
-* green: #4caf50
-* teal: #009688
-* blue: #2196f3
-* indigo: #3f51b5
-* purple: #9c27b0
-* magenta: #e91e63
-* red: #f44336
-* red-orange: #ff5722
-* orange: #ff9800
-* gold: #ffd600
-* yellow: #ffeb3b
+* lime green: #cddc39 | 24c 0m 94y 0k
+* green: #4caf50 | 72c 5m 95y 0k
+* teal: #009688 | 83c 19m 53y 2k
+* blue: #2196f3 | 71c 34m 0y 0k
+* indigo: #3f51b5 | 84c 76m 0y 0k
+* purple: #9c27b0 | 50c 90m 0y 0k
+* magenta: #e91e63 | 2c 98m 42y 0k
+* red: #f44336 | 0c 89m 84y 0k
+* red-orange: #ff5722 | 0c 80m 93y 0k
+* orange: #ff9800 | 0c 48m 100y 0k
+* gold: #ffd600 | 1c 13m 100y 0k
+* yellow: #ffeb3b | 2c 2m 87y 0k
 
 ### neutrals
-* black: #000
-* brown: #795548
-* white: #fff
+* black: #000 | 60c 40m 40y 100k
+* brown: #795548 | 42c 62m 66y 29k
+* white: #fff | 0c 0m 0y 0k
 
 ### greys
 * grey 100: #f5f5f5

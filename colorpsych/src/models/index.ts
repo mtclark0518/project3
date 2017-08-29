@@ -1,3 +1,4 @@
+
 //Connect
 import * as Sequelize from 'sequelize';
 
@@ -114,3 +115,4 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 export { db };
+
