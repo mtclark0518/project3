@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CreateByColorComponent } from './create-by-color/create-by-color.component';
@@ -12,6 +13,22 @@ import { SignupComponent } from './signup/signup.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 import { AppRoutingModule } from './app.routing.module';
+
+const routes: Routes = [
+  // { path: ' / ', component: LandingComponent }
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'signup', component: SignupComponent
+  },
+  {
+    path: 'create-by-color', component: CreateByColorComponent
+  },
+  {
+    path: 'by-color-result', component: ByColorResultComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -27,6 +44,10 @@ import { AppRoutingModule } from './app.routing.module';
     HttpModule,
     FormsModule,
     AppRoutingModule,
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true }
+      )
   ],
   providers: [],
   bootstrap: [AppComponent]
