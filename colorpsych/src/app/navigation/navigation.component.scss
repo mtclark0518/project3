@@ -3,6 +3,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '../../styles.scss';
 
 nav {
+	position: fixed;
+	top: 0;
 	height: 60px;
 	width: 100%;
 	border-bottom: 1px solid #fff;
