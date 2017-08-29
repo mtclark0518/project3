@@ -1,6 +1,6 @@
 module.exports = function(sequelize, Sequelize){
   var model = sequelize.define("user", {
-    local: {
+    // local: {
       email: {
         type: Sequelize.STRING,
         notNull: true,
@@ -10,7 +10,7 @@ module.exports = function(sequelize, Sequelize){
         type: Sequelize.STRING,
         notNull: true
       }
-    },
+    // },
   });
   return model;
 };
