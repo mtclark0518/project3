@@ -4,6 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 nav {
 	position: fixed;
+	z-index: 10;
 	top: 0;
 	height: 60px;
 	width: 100%;

@@ -29,6 +29,9 @@ const routes: Routes = [
     path: 'create-by-color', component: CreateByColorComponent
   },
   {
+    path: 'create-by-attribute', component: CreateByAttributeComponent
+  },
+  {
     path: 'by-color-result', component: ByColorResultComponent
   }
 ];

@@ -11,6 +11,9 @@ export class NavigationComponent implements OnInit  {
 
 	navExpanded = false;
 
+	dismissNav() {
+		this.navExpanded = false;
+	}
 	toggleNav() {
 		if (!this.navExpanded) {
 			this.navExpanded = true;
