@@ -1,3 +1,4 @@
+
 module.exports = function(sequelize, Sequelize){
   var model = sequelize.define("color", {
     id: { 
@@ -27,4 +28,3 @@ module.exports = function(sequelize, Sequelize){
     }
   });
   return model;
-};
