@@ -10,16 +10,44 @@ var colors = [
     rgb: 'rgb(205,220,57)',
     cymk: '24c 0m 94y 0k',
     attributes: [
-      { name: 'Freethinking' },
-      { name: 'Innovative' },
-      { name: 'Artistic' }, 
-      { name: 'Ideas' }, 
-      { name: 'Thought-provoking' }, 
-      { name: 'Extroverted' }, 
-      { name: 'Carefree' }
+      { 
+        name: 'Freethinking',
+        description: 'attract out-of-box thinking',
+        complement: 'Conventional',
+      },
+      { 
+        name: 'Innovative',
+        description: 'introduce new knowledge and products',
+        complement: 'Traditional',
+      },
+      { 
+        name: 'Artistic',
+        description: 'inspire imaginative experiences',
+        complement: 'Practical',
+      }, 
+      { 
+        name: 'Ideas',
+        description: 'convey spontaneous, original ideas',
+        complement: 'Things',
+      }, 
+      { 
+        name: 'Thought-provoking',
+        description: 'promote progressive ideas',
+        complement: 'Clear-thinking',
+      }, 
+      { 
+        name: 'Extroverted',
+        description: 'evoke assertive, group-oriented types',
+        complement: 'Introverted',
+      }, 
+      { 
+        name: 'Carefree',
+        description: 'create lively, spontaneous social interactions',
+        complement: 'Serious',
+      }
     ]
   },
-  
+
   {
     name: 'green',
     isNeutral: false,
@@ -27,12 +55,36 @@ var colors = [
     rgb: 'rgb(76,175,80)',
     cymk: '72c 5m 95y 0k',
     attributes: [
-      { name: 'Abstract' },
-      { name: 'Trustful' }, 
-      { name: 'Clear-thinking' }, 
-      { name: 'Stable' }, 
-      { name: 'Open' }, 
-      { name: 'Relaxed' },
+      { 
+        name: 'Abstract',
+        description: 'evoke insightful, abstract thinking',
+        complement: 'Concrete',
+      },
+      { 
+        name: 'Trustful',
+        description: 'encourage unsuspecting acceptance',
+        complement: 'Skeptical',
+      }, 
+      { 
+        name: 'Clear-thinking',
+        description: 'evoke self-assured thoughts',
+        complement: 'Thought-provoking',
+      }, 
+      { 
+        name: 'Stable',
+        description: 'create a stable, conservative image',
+        complement: 'Impulsive',
+      }, 
+      { 
+        name: 'Open',
+        description: 'evoke a genuine, forthright, sincere image',
+        complement: 'Mysterious',
+      }, 
+      { 
+        name: 'Relaxed',
+        description: 'create a calming, relaxed mood',
+        complement: 'High-energy',
+      },
     ]
   },
   
@@ -43,17 +95,49 @@ var colors = [
     rgb: 'rgb(0,150,136)',
     cymk: '83c 19m 53y 2k',
     attributes: [
-      { name: 'Conventional' }, 
-      { name: 'Abstract' }, 
-      { name: 'Artistic' }, 
-      { name: 'Trustful' }, 
-      { name: 'Introverted' }, 
-      { name: 'Serious' }, 
-      { name: 'Cooperataive' }, 
-      { name: 'Open' }
+      { 
+        name: 'Conventional',
+        description: 'create a responsible image',
+        complement: 'Freethinking',
+      }, 
+      // { 
+      //   name: 'Abstract',
+      //   description: 'evoke insightful, abstract thinking',
+      //   complement: 'Concrete',
+      // }, 
+      // { 
+      //   name: 'Artistic',
+      //   description: 'inspire imaginative experiences',
+      //   complement: 'Practical',
+      //  }, 
+      // { 
+      //   name: 'Trustful',
+      //   description: 'encourage unsuspecting acceptance',
+      //   complement: 'Skeptical',
+      // }, 
+      { 
+        name: 'Introverted',
+        description: 'create empathetic, sensitive feelings',
+        complement: 'Extroverted',
+      }, 
+      { 
+        name: 'Serious',
+        description: 'portray restrained self-control',
+        complement: 'Carefree',
+      }, 
+      { 
+        name: 'Cooperative',
+        description: 'create a cooperative compliance',
+        complement: 'Dominant',
+      }, 
+      // { 
+      //   name: 'Open',
+      //   description: 'evoke a genuine, forthright, sincere image',
+      //   complement: 'Mysterious',
+      // }
     ]
   },
-    
+
   {
     name: 'blue',
     isNeutral: false,
@@ -61,16 +145,56 @@ var colors = [
     rgb: 'rgb(33,150,243)',
     cymk: '71c 34m 0y 0k',
     attributes: [
-      { name: 'Ordered' }, 
-      { name: 'Traditional' }, 
-      { name: 'Abstract' }, 
-      { name: 'Composed' }, 
-      { name: 'Trustful' }, 
-      { name: 'Introverted' }, 
-      { name: 'Serious' }, 
-      { name: 'Cooperative' }, 
-      { name: 'Stable' }, 
-      { name: 'Relaxed' }
+      { 
+        name: 'Ordered',
+        description: 'create an efficient, self-disciplined image',
+        complement: 'Disordered',
+      }, 
+      { 
+        name: 'Traditional',
+        description: ' create a homelike, familiar feeling',
+        complement: 'Innovative',
+      }, 
+      // { 
+      //   name: 'Abstract',
+      //   description: 'evoke insightful, abstract thinking',
+      //   complement: 'Concrete',
+      // }, 
+      { 
+        name: 'Composed',
+        description: 'convey a reserved point of view',
+        complement: 'Warm',
+      }, 
+      // { 
+      //   name: 'Trustful',
+      //   description: 'encourage unsuspecting acceptance',
+      //   complement: 'Skeptical',
+      // }, 
+      // { 
+      //   name: 'Introverted',
+      //   description: 'create empathetic, sensitive feelings',
+      //   complement: 'Extroverted',
+      // }, 
+      // { 
+      //   name: 'Serious',
+      //   description: 'portray restrained self-control',
+      //   complement: 'Carefree',
+      // }, 
+      //  { 
+      //   name: 'Cooperative',
+      //   description: 'create a cooperative compliance',
+      //   complement: 'Dominant',
+      // }, 
+      // { 
+      //   name: 'Stable',
+      //   description: 'reate a stable, conservative image',
+      //   complement: 'Impulsive',
+      // }, 
+      // { 
+      //   name: 'Relaxed',
+      //   description: 'create a calming, relaxed mood',
+      //   complement: 'High-energy',
+      // },
     ]
   },
   
@@ -81,12 +205,36 @@ var colors = [
     rgb: 'rgb(63,81,181)',
     cymk: '84c 76m 0y 0k',
     attributes: [
-      { name: 'Freethinking' }, 
-      { name: 'Practical' }, 
-      { name: 'Ideas' }, 
-      { name: 'Extroverted' }, 
-      { name: 'Carefree' }, 
-      { name: 'High-energy' }
+      // { 
+      //   name: 'Freethinking',
+      //   description: 'attract out-of-box thinking',
+      //   complement: 'Conventional',
+      // },
+      { 
+        name: 'Practical',
+        description: 'convey objectives and instructions',
+        complement: 'Artistic',
+      }, 
+      // { 
+      //   name: 'Ideas',
+      //   description: 'convey spontaneous, original ideas',
+      //   complement: 'Things',
+      // }, 
+      // { 
+      //   name: 'Extroverted',
+      //   description: 'evoke assertive, group-oriented types',
+      //   complement: 'Introverted',
+      // }, 
+      // { 
+      //   name: 'Carefree',
+      //   description: 'create lively, spontaneous social interactions',
+      //   complement: 'Serious',
+      // },
+      { 
+        name: 'High-energy',
+        description: 'evoke an attention-getting immediacy',
+        complement: 'Relaxed',
+      }
     ]
   },
   
@@ -97,14 +245,46 @@ var colors = [
     rgb: 'rgb(156,39,176)',
     cymk: '50c 90m 0y 0k',
     attributes: [
-      { name: 'Freethinking' }, 
-      { name: 'Innovative' }, 
-      { name: 'Abstract' }, 
-      { name: 'Artistic' }, 
-      { name: 'Warm' }, 
-      { name: 'Carefree' }, 
-      { name: 'Impulsive' }, 
-      { name: 'Open' }
+      // { 
+      //   name: 'Freethinking',
+      //   description: 'attract out-of-box thinking',
+      //   complement: 'Conventional',
+      // },
+      // { 
+      //   name: 'Innovative',
+      //   description: 'introduce new knowledge and products',
+      //   complement: 'Traditional',
+      // },
+      // { 
+      //   name: 'Abstract',
+      //   description: 'evoke insightful, abstract thinking',
+      //   complement: 'Concrete',
+      // }, 
+      // { 
+      //   name: 'Artistic',
+      //   description: 'inspire imaginative experiences',
+      //   complement: 'Practical',
+      // }, 
+      { 
+        name: 'Warm',
+        description: 'encourage an uplifting, comfort-giving image',
+        complement: 'Composed',
+      }, 
+      // { 
+      //   name: 'Carefree',
+      //   description: 'create lively, spontaneous social interactions',
+      //   complement: 'Serious',
+      // },
+      { 
+        name: 'Impulsive',
+        description: 'evoke a reactive, emotional feeling',
+        complement: 'Stable',
+      }, 
+      // { 
+      //   name: 'Open',
+      //   description: 'evoke a genuine, forthright, sincere image',
+      //   complement: 'Mysterious',
+      // }
     ]
   },
   
@@ -115,12 +295,32 @@ var colors = [
     rgb: 'rgb(233,30,99)',
     cymk: '2c 98m 42y 0k',
     attributes: [
-      { name: 'Conventional' }, 
-      { name: 'Artistic' }, 
-      { name: 'Warm' }, 
-      { name: 'Thought-provoking' }, 
-      { name: 'Cooperataive' }, 
-    ]
+      // { 
+      //   name: 'Conventional',
+      //   description: 'create a responsible image',
+      //   complement: 'Freethinking',
+      // }, 
+      // { 
+      //   name: 'Artistic',
+      //   description: 'inspire imaginative experiences',
+      //   complement: 'Practical',
+      // }, 
+      // { 
+      //   name: 'Warm',
+      //   description: 'encourage an uplifting, comfort-giving image',
+      //   complement: 'Composed',
+      // }, 
+      // { 
+      //   name: 'Thought-provoking',
+      //   description: 'promote progressive ideas',
+      //   complement: 'Clear-thinking',
+      // }, 
+      // { 
+      //   name: 'Cooperative',
+      //   description: 'create a cooperative compliance',
+      //   complement: 'Dominant',
+      // }, 
+     ]
   },
   
   {
@@ -130,14 +330,46 @@ var colors = [
     rgb: 'rgb(244,67,54)',
     cymk: '0c 89m 84y 0k',
     attributes: [
-      { name: 'Traditional' }, 
-      { name: 'Practical' }, 
-      { name: 'Things' }, 
-      { name: 'Thought-provoking' }, 
-      { name: 'Dominant' }, 
-      { name: 'Stable' }, 
-      { name: 'Open' }, 
-      { name: 'High-energy' }
+      // { 
+      //   name: 'Traditional',
+      //   description: ' create a homelike, familiar feeling',
+      //   complement: 'Innovative',
+      // }, 
+      // { 
+      //   name: 'Practical',
+      //   description: 'convey objectives and instructions',
+      //   complement: 'Artistic',
+      // }, 
+      { 
+        name: 'Things',
+        description: 'establish a grounded, fix-anything image',
+        complement: 'Ideas',
+      }, 
+      // { 
+      //   name: 'Thought-provoking',
+      //   description: 'promote progressive ideas',
+      //   complement: 'Clear-thinking',
+      // }, 
+      { 
+        name: 'Dominant',
+        description: 'evoke dominant, forceful actions',
+        complement: 'Cooperative',
+      }, 
+      // { 
+      //   name: 'Stable',
+      //   description: 'reate a stable, conservative image',
+      //   complement: 'Impulsive',
+      // }, 
+      // { 
+      //   name: 'Open',
+      //   description: 'evoke a genuine, forthright, sincere image',
+      //   complement: 'Mysterious',
+      // },
+      // { 
+      //   name: 'High-energy',
+      //   description: 'evoke an attention-getting immediacy',
+      //   complement: 'Relaxed',
+      // }
     ]
   },
   
@@ -148,13 +380,41 @@ var colors = [
     rgb: 'rgb(255,87,34)',
     cymk: '0c 80m 93y 0k',
     attributes: [
-      { name: 'Traditional' }, 
-      { name: 'Practical' }, 
-      { name: 'Composed' }, 
-      { name: 'Cautious' }, 
-      { name: 'Cooperataive' }, 
-      { name: 'Impulsive' }, 
-      { name: 'Mysterious' }
+      // { 
+      //   name: 'Traditional',
+      //   description: ' create a homelike, familiar feeling',
+      //   complement: 'Innovative',
+      // }, 
+      // { 
+      //   name: 'Practical',
+      //   description: 'convey objectives and instructions',
+      //   complement: 'Artistic',
+      // }, 
+      // { 
+      //   name: 'Composed',
+      //   description: 'convey a reserved point of view',
+      //   complement: 'Warm',
+      // }, 
+      { 
+        name: 'Cautious',
+        description: 'create a threat-sensitive campaign',
+        complement: 'Bold',
+      }, 
+      // { 
+      //   name: 'Cooperative',
+      //   description: 'create a cooperative compliance',
+      //   complement: 'Dominant',
+      // }, 
+      // { 
+      //   name: 'Impulsive',
+      //   description: 'evoke a reactive, emotional feeling',
+      //   complement: 'Stable',
+      // }, 
+      // { 
+      //   name: 'Mysterious',
+      //   description: 'create a mysterious, discreet ambience',
+      //   complement: 'Open',
+      // }
     ]
   },
   
@@ -165,17 +425,61 @@ var colors = [
     rgb: 'rgb(255,152,0)',
     cymk: '0c 48m 100y 0k',
     attributes: [
-      { name: 'Freethinking' },
-      { name: 'Ordered' }, 
-      { name: 'Traditional' }, 
-      { name: 'Concrete' }, 
-      { name: 'Ideas' }, 
-      { name: 'Skeptical' }, 
-      { name: 'Thought-provoking' }, 
-      { name: 'Bold' }, 
-      { name: 'Extroverted' }, 
-      { name: 'Carefree' }, 
-      { name: 'Mysterious' }
+      // { 
+      //   name: 'Freethinking',
+      //   description: 'attract out-of-box thinking',
+      //   complement: 'Conventional',
+      // },
+      // { 
+      //   name: 'Ordered',
+      //   description: 'create an efficient, self-disciplined image',
+      //   complement: 'Disordered',
+      // }, 
+      // { 
+      //   name: 'Traditional',
+      //   description: ' create a homelike, familiar feeling',
+      //   complement: 'Innovative',
+      // }, 
+      { 
+        name: 'Concrete',
+        description: 'perceive strong organizational skills',
+        complement: 'Abstract',
+      }, 
+      { 
+        name: 'Ideas',
+        description: 'convey spontaneous, original ideas',
+        complement: 'Things',
+      }, 
+      { 
+        name: 'Skeptical',
+        description: 'create a critical, truthgul awareness',
+        complement: 'Trustful',
+      }, 
+      // { 
+      //   name: 'Thought-provoking',
+      //   description: 'promote progressive ideas',
+      //   complement: 'Clear-thinking',
+      // }, 
+      { 
+        name: 'Bold',
+        description: 'promote expressive social involvements',
+        complement: 'Cautious',
+      }, 
+      // { 
+      //   name: 'Extroverted',
+      //   description: 'evoke assertive, group-oriented types',
+      //   complement: 'Introverted',
+      // }, 
+      // { 
+      //   name: 'Carefree',
+      //   description: 'create lively, spontaneous social interactions',
+      //   complement: 'Serious',
+      // },
+      { 
+        name: 'Mysterious',
+        description: 'create a mysterious, discreet ambience',
+        complement: 'Open',
+      }
     ]
   },
   
@@ -186,11 +490,31 @@ var colors = [
     rgb: 'rgb(255,214,0)',
     cymk: '1c 13m 100y 0k',
     attributes: [
-      { name: 'Disordered' }, 
-      { name: 'Innovative' }, 
-      { name: 'Introverted' }, 
-      { name: 'Impulsive' }, 
-      { name: 'High-energy' }
+      { 
+        name: 'Disordered',
+        description: 'evoke an unexacting, bohemian setting',
+        complement: 'Ordered',
+      }, 
+      // { 
+      //   name: 'Innovative',
+      //   description: 'introduce new knowledge and products',
+      //   complement: 'Traditional',
+      // },
+      // { 
+      //   name: 'Introverted',
+      //   description: 'create empathetic, sensitive feelings',
+      //   complement: 'Extroverted',
+      // }, 
+      // { 
+      //   name: 'Impulsive',
+      //   description: 'evoke a reactive, emotional feeling',
+      //   complement: 'Stable',
+      // }, 
+      // { 
+      //   name: 'High-energy',
+      //   description: 'evoke an attention-getting immediacy',
+      //   complement: 'Relaxed',
+      // }
     ]
   },
   
@@ -201,13 +525,41 @@ var colors = [
     rgb: 'rgb(255,235,59)',
     cymk: '2c 2m 87y 0k',
     attributes: [
-      { name: 'Freethinking' },
-      { name: 'Disordered' }, 
-      { name: 'Warm' }, 
-      { name: 'Clear-thinking' }, 
-      { name: 'Cautious' }, 
-      { name: 'Extroverted' }, 
-      { name: 'Relaxed' }
+      // { 
+      //   name: 'Freethinking',
+      //   description: 'attract out-of-box thinking',
+      //   complement: 'Conventional',
+      // },
+      // { 
+      //   name: 'Disordered',
+      //   description: 'evoke an unexacting, bohemian setting',
+      //   complement: 'Ordered',
+      // }, 
+      // { 
+      //   name: 'Warm',
+      //   description: 'encourage an uplifting, comfort-giving image',
+      //   complement: 'Composed',
+      // }, 
+      // { 
+      //   name: 'Clear-thinking',
+      //   description: 'evoke self-assured thoughts',
+      //   complement: 'Thought-provoking',
+      // }, 
+      // { 
+      //   name: 'Cautious',
+      //   description: 'create a threat-sensitive campaign',
+      //   complement: 'Bold',
+      // }, 
+      // { 
+      //   name: 'Extroverted',
+      //   description: 'evoke assertive, group-oriented types',
+      //   complement: 'Introverted',
+      // }, 
+      // { 
+      //   name: 'Relaxed',
+      //   description: 'create a calming, relaxed mood',
+      //   complement: 'High-energy',
+      // },
     ]
   },
   
@@ -218,17 +570,61 @@ var colors = [
     rgb: 'rgb(0,0,0)',
     cymk: '60c 40m 40y 100k',
     attributes: [
-      { name: 'Disordered' }, 
-      { name: 'Concrete' }, 
-      { name: 'Ideas' }, 
-      { name: 'Skeptical' }, 
-      { name: 'Clear-thinking' }, 
-      { name: 'Introverted' }, 
-      { name: 'Carefree' }, 
-      { name: 'Dominant' }, 
-      { name: 'Impulsive' }, 
-      { name: 'Mysterious' }, 
-      { name: 'High-energy' }
+      // { 
+      //   name: 'Disordered',
+      //   description: 'evoke an unexacting, bohemian setting',
+      //   complement: 'Ordered',
+      // }, 
+      // { 
+      //   name: 'Concrete',
+      //   description: 'perceive strong organizational skills',
+      //   complement: 'Abstract',
+      // }, 
+      // { 
+      //   name: 'Ideas',
+      //   description: 'convey spontaneous, original ideas',
+      //   complement: 'Things',
+      // }, 
+      // { 
+      //   name: 'Skeptical',
+      //   description: 'create a critical, truthgul awareness',
+      //   complement: 'Trustful',
+      // }, 
+      // { 
+      //   name: 'Clear-thinking',
+      //   description: 'evoke self-assured thoughts',
+      //   complement: 'Thought-provoking',
+      // }, 
+      // { 
+      //   name: 'Introverted',
+      //   description: 'create empathetic, sensitive feelings',
+      //   complement: 'Extroverted',
+      // }, 
+      // { 
+      //   name: 'Carefree',
+      //   description: 'create lively, spontaneous social interactions',
+      //   complement: 'Serious',
+      // },
+      // { 
+      //   name: 'Dominant',
+      //   description: 'evoke dominant, forceful actions',
+      //   complement: 'Cooperative',
+      // }, 
+      // { 
+      //   name: 'Impulsive',
+      //   description: 'evoke a reactive, emotional feeling',
+      //   complement: 'Stable',
+      // }, 
+      // { 
+      //   name: 'Mysterious',
+      //   description: 'create a mysterious, discreet ambience',
+      //   complement: 'Open',
+      // }, 
+      // { 
+      //   name: 'High-energy',
+      //   description: 'evoke an attention-getting immediacy',
+      //   complement: 'Relaxed',
+      // }
     ]
   },
   
@@ -239,14 +635,46 @@ var colors = [
     rgb: 'rgb(121,85,72)',
     cymk: '42c 62m 66y 29k',
     attributes: [
-      { name: 'Conventional' }, 
-      { name: 'Disordered' }, 
-      { name: 'Concrete' }, 
-      { name: 'Things' }, 
-      { name: 'Bold' }, 
-      { name: 'Serious' }, 
-      { name: 'Mysterious' }, 
-      { name: 'Relaxed' }
+      // { 
+      //   name: 'Conventional',
+      //   description: 'create a responsible image',
+      //   complement: 'Freethinking',
+      // }, 
+      // { 
+      //   name: 'Disordered',
+      //   description: 'evoke an unexacting, bohemian setting',
+      //   complement: 'Ordered',
+      // }, 
+      // { 
+      //   name: 'Concrete',
+      //   description: 'perceive strong organizational skills',
+      //   complement: 'Abstract',
+      // }, 
+      // { 
+      //   name: 'Things',
+      //   description: 'establish a grounded, fix-anything image',
+      //   complement: 'Ideas',
+      // }, 
+      // { 
+      //   name: 'Bold',
+      //   description: 'promote expressive social involvements',
+      //   complement: 'Cautious',
+      // }, 
+      // { 
+      //   name: 'Serious',
+      //   description: 'portray restrained self-control',
+      //   complement: 'Carefree',
+      // }, 
+      // { 
+      //   name: 'Mysterious',
+      //   description: 'create a mysterious, discreet ambience',
+      //   complement: 'Open',
+      // }, 
+      // { 
+      //   name: 'Relaxed',
+      //   description: 'create a calming, relaxed mood',
+      //   complement: 'High-energy',
+      // },
     ]
   },
   
@@ -257,442 +685,327 @@ var colors = [
     rgb: 'rgb(255,255,255)',
     cymk: '0c 0m 0y 0k',
     attributes: [
-      { name: 'Practical' }, 
-      { name: 'Things' }, 
-      { name: 'Clear-thinking' }, 
-      { name: 'Introverted' }, 
-      { name: 'Serious' }, 
-      { name: 'Relaxed' }
+      // { 
+      //   name: 'Practical',
+      //   description: 'convey objectives and instructions',
+      //   complement: 'Artistic',
+      // }, 
+      // { 
+      //   name: 'Things',
+      //   description: 'establish a grounded, fix-anything image',
+      //   complement: 'Ideas',
+      // }, 
+      // { 
+      //   name: 'Clear-thinking',
+      //   description: 'evoke self-assured thoughts',
+      //   complement: 'Thought-provoking',
+      // }, 
+      // { 
+      //   name: 'Introverted',
+      //   description: 'create empathetic, sensitive feelings',
+      //   complement: 'Extroverted',
+      // }, 
+      // { 
+      //   name: 'Serious',
+      //   description: 'portray restrained self-control',
+      //   complement: 'Carefree',
+      // }, 
+      // { 
+      //   name: 'Relaxed',
+      //   description: 'create a calming, relaxed mood',
+      //   complement: 'High-energy',
+      // },
     ]
   },
-  
+
 ];
+
 
 var attributes = [
   {
     name: 'Freethinking',
     description: 'attract out-of-box thinking',
     complement: 'Conventional',
-    colors: [
-      { name: 'lime green' },
-      { name: 'indigo' },
-      { name: 'purple' },
-      { name: 'orange' },
-      { name: 'yellow' },
-    ]
+    colors: [ 'lime green', 'indigo', 'purple', 'orange', 'yellow' ]
   },
   
   {
     name: 'Conventional',
     description: 'create a responsible image',
     complement: 'Freethinking',
-    colors: [
-      { name: 'teal' },
-      { name: 'magenta' },
-      { name: 'brown' },
-    ]
+    colors: [ 'teal', 'magenta', 'brown' ]
   },
   
   {
     name: 'Disordered',
     description: 'evoke an unexacting, bohemian setting',
     complement: 'Ordered',
-    colors: [
-      { name: 'gold' },
-      { name: 'black' },
-      { name: 'brown' },
-    ]
+    colors: [ 'gold', 'black', 'brown' ]
   },
   
   {
     name: 'Ordered',
     description: 'create an efficient, self-disciplined image',
     complement: 'Disordered',
-    colors: [
-      { name: 'blue' },
-      { name: 'orange' },
-    ]
+    colors: [ 'blue', 'orange' ]
   },
   
   {
     name: 'Traditional',
     description: ' create a homelike, familiar feeling',
     complement: 'Innovative',
-    colors: [
-      { name: 'blue' },
-      { name: 'red' },
-      { name: 'red-orange' },
-      { name: 'orange' },
-    ]
+    colors: [ 'blue', 'red', 'red-orange', 'orange' ]
   },
   
   {
     name: 'Innovative',
     description: 'introduce new knowledge and products',
     complement: 'Traditional',
-    colors: [
-      { name: 'lime green' },
-      { name: 'purple' },
-      { name: 'gold' },
-    ]
+    colors: [ 'lime green', 'purple', 'gold' ]
   },
   
   {
     name: 'Concrete',
     description: 'perceive strong organizational skills',
     complement: 'Abstract',
-    colors: [
-      { name: 'orange' },
-      { name: 'black' },
-      { name: 'brown' },
-    ]
+    colors: [ 'orange', 'black', 'brown' ]
   },
   
   {
     name: 'Abstract',
     description: 'evoke insightful, abstract thinking',
     complement: 'Concrete',
-    colors: [
-      { name: 'green' },
-      { name: 'teal' },
-      { name: 'blue' },
-      { name: 'purple' },
-    ]
+    colors: [ 'green', 'teal', 'blue', 'purple' ]
   },
     
   {
     name: 'Practical',
     description: 'convey objectives and instructions',
     complement: 'Artistic',
-    colors: [
-      { name: 'indigo' },
-      { name: 'red' },
-      { name: 'red-orange' },
-      { name: 'white' },
-    ]
+    colors: [ 'indigo', 'red', 'red-orange', 'white' ]
   },
   
   {
     name: 'Artistic',
     description: 'inspire imaginative experiences',
     complement: 'Practical',
-    colors: [
-      { name: 'lime green' },
-      { name: 'teal' },
-      { name: 'purple' },
-      { name: 'magenta' },
-    ]
+    colors: [ 'lime green', 'teal', 'purple', 'magenta' ]
   },
   
   {
     name: 'Things',
     description: 'establish a grounded, fix-anything image',
     complement: 'Ideas',
-    colors: [
-      { name: 'red' },
-      { name: 'brown' },
-      { name: 'white' },
-    ]
+    colors: [ 'red', 'brown', 'white' ]
   },
   
   {
     name: 'Ideas',
     description: 'convey spontaneous, original ideas',
     complement: 'Things',
-    colors: [
-      { name: 'lime green' },
-      { name: 'indigo' },
-      { name: 'orange' },
-      { name: 'black' },
-    ]
+    colors: [ 'lime green', 'indigo', 'orange', 'black' ]
   },
   
   {
     name: 'Composed',
     description: 'convey a reserved point of view',
     complement: 'Warm',
-    colors: [
-      { name: 'blue' },
-      { name: 'red-orange' },
-    ]
+    colors: [ 'blue', 'red-orange' ]
   },
   
   {
     name: 'Warm',
     description: 'encourage an uplifting, comfort-giving image',
     complement: 'Composed',
-    colors: [
-      { name: 'purple' },
-      { name: 'magenta' },
-      { name: 'yellow' },
-    ]
+    colors: [ 'purple', 'magenta', 'yellow' ]
   },
  
   {
     name: 'Trustful',
     description: 'encourage unsuspecting acceptance',
     complement: 'Skeptical',
-    colors: [
-      { name: 'green' },
-      { name: 'teal' },
-      { name: 'blue' },
-    ]
+    colors: [ 'green', 'teal', 'blue' ]
   },
   
   {
     name: 'Skeptical',
     description: 'create a critical, truthgul awareness',
     complement: 'Trustful',
-    colors: [
-      { name: 'orange' },
-      { name: 'black' },
-    ]
+    colors: [ 'orange', 'black' ]
   },
    
   {
     name: 'Clear-thinking',
     description: 'evoke self-assured thoughts',
     complement: 'Thought-provoking',
-    colors: [
-      { name: 'green' },
-      { name: 'yellow' },
-      { name: 'black' },
-      { name: 'white' },
-    ]
+    colors: [ 'green', 'yellow', 'black', 'white' ]
   },
   
   {
     name: 'Thought-provoking',
     description: 'promote progressive ideas',
     complement: 'Clear-thinking',
-    colors: [
-      { name: 'lime green' },
-      { name: 'magenta' },
-      { name: 'red' },
-      { name: 'orange' },
-    ]
+    colors: [ 'lime green', 'magenta', 'red', 'orange' ]
   },
   
   {
     name: 'Cautious',
     description: 'create a threat-sensitive campaign',
     complement: 'Bold',
-    colors: [
-      { name: 'red-orange' },
-      { name: 'yellow' },
-    ]
+    colors: [ 'red-orange', 'yellow' ]
   },
   
   {
     name: 'Bold',
     description: 'promote expressive social involvements',
     complement: 'Cautious',
-    colors: [
-      { name: 'orange' },
-      { name: 'brown' },
-    ]
+    colors: [ 'orange', 'brown' ]
   },
   
   {
     name: 'Extroverted',
     description: 'evoke assertive, group-oriented types',
     complement: 'Introverted',
-    colors: [
-      { name: 'lime green' },
-      { name: 'indigo' },
-      { name: 'orange' },
-      { name: 'yellow' },
-    ]
+    colors: [ 'lime green', 'indigo', 'orange', 'yellow' ]
   },
   
   {
     name: 'Introverted',
     description: 'create empathetic, sensitive feelings',
     complement: 'Extroverted',
-    colors: [
-      { name: 'teal' },
-      { name: 'blue' },
-      { name: 'gold' },
-      { name: 'black' },
-      { name: 'white' },
-    ]
+    colors: [ 'teal', 'blue', 'gold', 'black', 'white' ]
   },
   
   {
     name: 'Serious',
     description: 'portray restrained self-control',
     complement: 'Carefree',
-    colors: [
-      { name: 'teal' },
-      { name: 'blue' },
-      { name: 'brown' },
-      { name: 'white' },
-    ]
+    colors: [ 'teal', 'blue', 'brown', 'white' ]
   },
   
   {
     name: 'Carefree',
     description: 'create lively, spontaneous social interactions',
     complement: 'Serious',
-    colors: [
-      { name: 'lime green' },
-      { name: 'indigo' },
-      { name: 'purple' },
-      { name: 'orange' },
-      { name: 'black' },
-    ]
+    colors: [ 'lime green', 'indigo', 'purple', 'orange', 'black' ]
   },
   
   {
     name: 'Cooperative',
     description: 'create a cooperative compliance',
     complement: 'Dominant',
-    colors: [
-      { name: 'teal' },
-      { name: 'blue' },
-      { name: 'magenta' },
-      { name: 'red-orange' },
-    ]
+    colors: [ 'teal', 'blue', 'magenta', 'red-orange' ]
   },
   
   {
     name: 'Dominant',
     description: 'evoke dominant, forceful actions',
     complement: 'Cooperative',
-    colors: [
-      { name: 'red' },
-      { name: 'black' },
-    ]
+    colors: [ 'red', 'black' ]
   },
   
   {
     name: 'Impulsive',
     description: 'evoke a reactive, emotional feeling',
     complement: 'Stable',
-    colors: [
-      { name: 'purple' },
-      { name: 'red-orange' },
-      { name: 'gold' },
-      { name: 'black' },
-    ]
+    colors: [ 'purple', 'red-orange', 'gold', 'black' ]
   },
   
   {
     name: 'Stable',
     description: 'reate a stable, conservative image',
     complement: 'Impulsive',
-    colors: [
-      { name: 'green' },
-      { name: 'blue' },
-      { name: 'red' },
-    ]
+    colors: [ 'green', 'blue', 'red' ]
   },
   
   {
     name: 'Open',
     description: 'evoke a genuine, forthright, sincere image',
     complement: 'Mysterious',
-    colors: [
-      { name: 'green' },
-      { name: 'teal' },
-      { name: 'purple' },
-      { name: 'red' },
-    ]
+    colors: [ 'green', 'teal', 'purple', 'red' ]
   },
   
   {
     name: 'Mysterious',
     description: 'create a mysterious, discreet ambience',
     complement: 'Open',
-    colors: [
-      { name: 'red-orange' },
-      { name: 'orange' },
-      { name: 'black' },
-      { name: 'brown' },
-    ]
+    colors: [ 'red-orange', 'orange', 'black', 'brown' ]
   },
   
   {
     name: 'Relaxed',
     description: 'create a calming, relaxed mood',
     complement: 'High-energy',
-    colors: [
-      { name: 'green' },
-      { name: 'blue' },
-      { name: 'yellow' },
-      { name: 'white' },
-    ]
+    colors: [ 'green', 'blue', 'yellow', 'white' ]
   },
 
   {
     name: 'High-energy',
     description: 'evoke an attention-getting immediacy',
     complement: 'Relaxed',
-    colors: [
-      { name: 'indigo' },
-      { name: 'red' },
-      { name: 'gold' },
-      { name: 'black' },
-    ]
+    colors: [ 'indigo', 'red', 'gold', 'black' ]
   }
 ];
 
 
+// var associationsCreate = function () {
+//   for (var i = 0; i < attributes.length; i++) {
+//     for (var j = 0; j < attributes[i].colors.length; j++) {
+//       DB.Color.findAll({
+//         where: {
+//           name: { $in: attributes[i].colors }
+//         }
+//       })
+//       .then(function(colors) {
+//         DB.Attributes.findAll({
+//           where: { name: attributes[i].name }
+//         })
+//         .then(function(attrib, colors) {
+//           attrib.setColors(colors)
+//         })
+//       })
+//     }
+//   }
+// };
+
 var attribCreate = function() {
-  return DB.Attribute.bulkCreate(attributes, { include: [ DB.Color ] } )
-  // return attributes.forEach(function(attrib) {
-  //   DB.Attribute.create(
-  //     {
-  //       name: attrib.name,
-  //       description: attrib.description,
-  //       complement: attrib.complement,
-  //       colors: colors  // associations
-  //     }, 
-  //     { include: [ DB.Color ] }
-  //   )
-  // })
+  return DB.Attribute.bulkCreate(attributes, { include: [{ association: DB.Color.Attribute }] } )
 };
 
 var colorCreate = function() {
-  return DB.Color.bulkCreate(colors, { include: [ DB.Attribute ] } )
-  // .Promise.all(attributes)
-  // .then(function() {
-  //   console.log('attributes were created');
-  // })
-
-  // return Promise.all([
-  //   colors.forEach(function(color) {
-  //     DB.Color.create(
-  //       {
-  //         name: color.name,
-  //         isNeutral: color.isNeutral,
-  //         hex: color.hex,
-  //         rgb: color.rgb,
-  //         cymk: color.cymk,
-  //         attributes: attributes
-  //       },
-  //       { include: [ DB.Attribute ] }
-  //     )
-  //   })
-  // ])
+  return DB.Color.bulkCreate(colors, { include: [{ association: DB.Color.Attribute }] } )
 };
 
-var assocCreate = function() {
-  // for each colors
-  //   for each attributes
-  //     add row to color_attributes
-}
+// var colorCreate2 = function() {
+//   return DB.Color.create(colors[1], { include: [{ association: DB.Color.Attribute }] } )
+// };
 
-attribCreate()
-// Promise.all(attributes).then(function() {
-//   console.log('attributes were created');
-// })
-.then(colorCreate())
-// colorCreate();
-// Promise.all(colors).then(function() {
-//   console.log('colors were created');
-// })
+// var colorCreate3 = function() {
+//   return DB.Color.create(colors[2], { include: [{ association: DB.Color.Attribute }] } )
+// };
+
+colorCreate()
+// .then(colorCreate2())
+// .then(colorCreate3())
+
+.then(attribCreate())
+// .then(associationsCreate())
+
+// DB.Color.create(colors[0], { include: [{ association: DB.Color.Attribute }] } )
+// .then(DB.Color.create(colors[1], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[2], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[3], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[4], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[5], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[6], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[7], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[8], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[9], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[10], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[11], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[12], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[13], { include: [{ association: DB.Color.Attribute }] } ))
+// .then(DB.Color.create(colors[14], { include: [{ association: DB.Color.Attribute }] } ))
 .then(function() {
   process.exit();
-  // console.log('colors and attributes loaded');
 });
