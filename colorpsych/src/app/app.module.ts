@@ -14,7 +14,7 @@ import { SignupComponent } from './signup/index';
 import { CreateByAttributeComponent } from './create-by-attribute/create-by-attribute.component';
 import { CreateByColorComponent } from './create-by-color/create-by-color.component';
 import { ByColorResultComponent } from './by-color-result/by-color-result.component';
-import { ClickOutsideDirective } from './click-outside.directive';
+// import { ClickOutsideDirective } from './click-outside.directive';
 
 import { AppRoutingModule } from './app.routing.module';
 
@@ -31,7 +31,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     CreateByColorComponent,
     ByColorResultComponent,
     NavigationComponent,
-    ClickOutsideDirective,
+    // ClickOutsideDirective,
     CreateByAttributeComponent
   ],
   imports: [
