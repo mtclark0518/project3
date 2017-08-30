@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./by-color-result.component.scss']
 })
 export class ByColorResultComponent implements OnInit {
-
+colorName;
+attributes;
+hexColor;
+rgbColor;
+cmykColor;
   constructor() { }
 
   ngOnInit() {
