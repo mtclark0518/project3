@@ -1,10 +1,51 @@
-<h4>log in</h4>
+<!-- Login form -->
+<form>
+    <p class="h5 text-center mb-4">Sign in</p>
 
-<label for="email">email</label>
-<input type="text" name="email" placeholder="email">
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="text" id="defaultForm-email" class="form-control" mdbActive>
+        <label for="defaultForm-email">Your email</label>
+    </div>
 
-<label for="password">password</label>
-<input type="text" name="password" placeholder="password">
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="password" id="defaultForm-pass" class="form-control" mdbActive>
+        <label for="defaultForm-pass">Your password</label>
+    </div>
 
-<input type="button" value="log in">
+    <div class="text-center">
+        <button class="btn btn-default waves-light" mdbRippleRadius>Login</button>
+    </div>
+</form>
+<!-- Login form -->
+
+<div class="body container">
+	<div class="col-md-2"></div> <!-- bkgrnd white space left -->
+
+	<!-- Login form -->
+	<form class="col-md-8" action="">
+
+		<h4 class="text-center">log in</h4>
+
+		<!-- email -->
+		<div class="md-form">
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="enter your email" class="form-control">
+		</div> <!-- end class form -->
+
+		<!-- password -->
+		<div class="md-form">
+			<label for="password">password</label>
+			<input type="text" name="password" placeholder="enter your password" class="form-control">
+		</div>
+			
+		<!-- log in button -->
+		<div class="text-center">
+			<button type="button" class="btn btn-elegant waves-light">log in</button>
+		</div>
+
+	</form>
+	<div class="col-md-2"></div> <!-- bkgrnd white space right -->
+</div>
 <router-outlet></router-outlet>
