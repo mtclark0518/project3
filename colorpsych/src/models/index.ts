@@ -87,7 +87,7 @@ User.hasMany(Palette, {
 
 Palette.belongsToMany(Color, {
   through: 'palette_colors',
-})
+});
 
 Color.belongsToMany(Palette, {
     through: 'palette_colors',

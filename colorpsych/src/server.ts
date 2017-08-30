@@ -1,17 +1,13 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 import { platformServer, renderModuleFactory } from '@angular/platform-server';
-<<<<<<< HEAD
 import { enableProdMode } from '@angular/core';
 import { AppServerModuleNgFactory } from '../dist/ngfactory/src/app/app.server.module.ngfactory';
-=======
-import { AppServerModuleNgFactory } from "../dist/ngfactory/src/app/app.server.module.ngfactory";
->>>>>>> b7992c660f9b1ac417d20e3b8915fd7bb46d11bd
+
 
 import { ngExpressEngine } from '@ngx-universal/express-engine';
 import { AppServerModule } from './app/app.server.module';
 
-import { enableProdMode } from '@angular/core';
 
 import * as express from 'express';
 import * as session from 'express-session';
