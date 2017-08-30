@@ -18,6 +18,9 @@ import * as morgan from 'morgan';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
+import { router as expressRouter } from './config/routes';
+
+
  enableProdMode();
 
 const PORT = 3000;
@@ -44,7 +47,7 @@ app.set('view engine', 'html');
 app.set('views', 'src');
 
 app.get('*.*', express.static(join(__dirname, '..', 'dist')));
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index', { req });
 });
 
@@ -59,8 +62,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-import { router as expressRouter } from './config/routes';
-app.use('/', expressRouter);
+app.use(expressRouter);
 
 app.listen(PORT, () => {
     console.log('all systems go on ' + PORT);

@@ -33,7 +33,7 @@ var User = sequelize.import("./user");
       type: Sequelize.STRING,
       notNull: true
     },
-    // attrib_id: {
+    // attributeId: {
     //   type: Sequelize.INTEGER,
 
     //   references: {
@@ -63,7 +63,7 @@ var User = sequelize.import("./user");
     complement: { 
       type: Sequelize.STRING 
     },
-    // color_id: {
+    // colorId: {
     //   type: Sequelize.INTEGER,
 
     //   references: {
@@ -78,8 +78,6 @@ var User = sequelize.import("./user");
 
 var Palette = sequelize.import("./palette")
 
-// var Color_Attribute = sequelize.import("./colorAttribute");
-
 
 Palette.belongsTo(User, {
     // through: 'user_palettes',
@@ -89,7 +87,7 @@ User.hasMany(Palette, {
     // through: 'user_palettes',
 });
 
-Palette.belongsToMany(Color, {
+Palette.belongsToMany(Color, {  // hasMany?
   through: 'palette_colors',
 })
 
@@ -97,7 +95,7 @@ Color.belongsToMany(Palette, {
     through: 'palette_colors',
 });
 
-Palette.belongsToMany(Attribute, {
+Palette.belongsToMany(Attribute, {  // hasMany?
     through: 'palette_attributes',
 });
 
@@ -105,13 +103,14 @@ Attribute.belongsToMany(Palette, {
     through: 'palette_attributes',
 });
 
-Attribute.belongsToMany(Color, { 
+Attribute.Color = Attribute.belongsToMany(Color, { 
   // as: 'Colors',
   // through: Color_Attribute,
   through: 'color_attributes',
   // foreignKey: 'attrib_id'
 });
-Color.belongsToMany(Attribute, {
+
+Color.Attribute = Color.belongsToMany(Attribute, {
   // as: 'Attributes',
   // through: Color_Attribute,
   through: 'color_attributes',
