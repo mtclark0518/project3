@@ -19,11 +19,12 @@ import * as morgan from 'morgan';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
+nk
+import { router as expressRouter } from './config/routes';
+
 import * as db from './models/index';
 
-
 enableProdMode();
-
 
 const app = express();
 
@@ -48,7 +49,7 @@ app.set('view engine', 'html');
 app.set('views', 'src');
 
 app.get('*.*', express.static(join(__dirname, '..', 'dist')));
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index', { req });
 });
 
@@ -64,8 +65,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-import { router as expressRouter } from './config/routes';
-app.use('/', expressRouter);
+app.use(expressRouter);
 
 
 app.listen(3000, function () {

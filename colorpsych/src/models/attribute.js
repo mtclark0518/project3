@@ -2,7 +2,8 @@ module.exports = function(sequelize, Sequelize){
   var model = sequelize.define("attribute", {
     id: { 
       type: Sequelize.INTEGER, 
-      primaryKey: true 
+      primaryKey: true,
+      autoIncrement: true
     },
     name: { 
       type: Sequelize.STRING,
@@ -14,17 +15,6 @@ module.exports = function(sequelize, Sequelize){
     complement: { 
       type: Sequelize.STRING 
     },
-    color_id: {
-      type: Sequelize.INTEGER,
-
-      references: {
-        model: Color,
-        key: 'id',
-
-        // This declares when to check the foreign key constraint. PostgreSQL only.
-        //deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-      }
-    }
   });
   return model;
 };
