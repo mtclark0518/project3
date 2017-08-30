@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -13,7 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 import { AppRoutingModule } from './app.routing.module';
-import { ClickOutsideDirective } from './click-outside.directive';
+// import { ClickOutsideDirective } from './click-outside.directive';
 import { CreateByAttributeComponent } from './create-by-attribute/create-by-attribute.component';
 
 
@@ -44,7 +43,7 @@ const routes: Routes = [
     LoginComponent,
     SignupComponent,
     NavigationComponent,
-    ClickOutsideDirective,
+    // ClickOutsideDirective,
     CreateByAttributeComponent
   ],
   imports: [
