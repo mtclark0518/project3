@@ -1,4 +1,21 @@
 <router-outlet></router-outlet>
 <div class="body">
-	<h1>Create A Pallet Based On Branding Identity Attributes</h1>
-</div>
+	<h2>Create A Pallette Based On Your Brand's Identity</h2>
+	<p>We've compiled a thorough list of attributes for your branding identity that correspond to color values according to the Dewey Color System.</p>
+	<p>For this first step, dismiss any of the attribute pairs that do not describe your branding identity.</p>
+
+	<div *ngFor="let pair of pairs; let id = index">
+
+		<div [ngClass]="{'dismissable_button_group': !dismissed, 'dismiss': dismissed }" id={{id}}>
+			<button (click)="toggleDismiss(id)" class="x_button">
+				<div class="x">X</div>
+			</button>
+			<div class="attr_pair">
+				<button class="border_bottom"><h4>{{pair.descriptor1.attribute}}</h4></button>
+				<button><h4>{{pair.descriptor2.attribute}}</h4></button>
+			</div>
+		</div>
+
+	</div><!-- Attribute Pairs -->
+
+</div><!-- Body -->

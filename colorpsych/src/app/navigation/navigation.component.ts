@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
-import { ClickOutsideDirective } from '../click-outside.directive';
+// import { ClickOutsideDirective } from '../click-outside.directive';
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +11,7 @@ export class NavigationComponent implements OnInit  {
 
 	navExpanded = false;
 
-	dismissNav() {
+	dismissNav(event) {
 		this.navExpanded = false;
 	}
 	toggleNav() {
