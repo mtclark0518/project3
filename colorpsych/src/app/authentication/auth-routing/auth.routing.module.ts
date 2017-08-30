@@ -1,3 +1,4 @@
+import { AuthGuardService } from '../services/guard/auth-guard.service';
 import { AuthenticationComponent } from '../authentication.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,6 +14,7 @@ const authRoutes: Routes = [
   { path: 'authentication', component: AuthenticationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'user', component: UserComponent, canActivate: [AuthGuardService] }
 
 ];
 
