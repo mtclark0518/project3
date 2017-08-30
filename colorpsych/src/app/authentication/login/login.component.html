@@ -1,3 +1,16 @@
-<p>
-  login works!
-</p>
+<section>
+    <div class="login_form_wrapper">
+        <div class="login_input_wrapper formGroup">
+            <input id='email' [(ngModel)]='email' name='email'>
+            <input id='password' [(ngModel)]='password' name='password'>
+            <button type="submit" (click)="getLogin(email, password)">Login</button>
+        </div>
+    </div>
+</section>
+<section>
+    <p class="link-item">{{message}}</p>
+    <div class="landingLinks">
+        <button class="link-item" (click)="login()" *ngIf="!loginService.isLoggedIn">Login</button>
+        <button class="link-item" (click)="logout()" *ngIf="loginService.isLoggedIn">Logout</button>
+    </div>
+</section>

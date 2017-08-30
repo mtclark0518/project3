@@ -14,10 +14,11 @@ import * as morgan from 'morgan';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
+import * as db from './models';
+
 
 enableProdMode();
 
-const PORT = 3000;
 const app = express();
 
 app.use(bodyParser.json());
@@ -59,7 +60,7 @@ app.use(function(req, res, next) {
 import { router as expressRouter } from './config/routes';
 app.use('/', expressRouter);
 
-app.listen(PORT, () => {
-    console.log('all systems go on ' + PORT);
-});
 
+app.listen(process.env.PORT || 3000, function () {
+    console.log('all systems go');
+});

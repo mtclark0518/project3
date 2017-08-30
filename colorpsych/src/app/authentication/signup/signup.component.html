@@ -1,3 +1,9 @@
-<p>
-  signup works!
-</p>
+<section>
+    <div class="form_wrapper">
+        <div class="input_wrapper formGroup">
+            <input id='email' [(ngModel)]='email' name='email'>
+            <input id='password' [(ngModel)]='password' name='password'>
+            <button type="submit" (click)="signup(email, password)">Register</button>
+        </div>
+    </div>
+</section>
