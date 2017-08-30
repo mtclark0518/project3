@@ -1,8 +1,17 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 import { platformServer, renderModuleFactory } from '@angular/platform-server';
+<<<<<<< HEAD
 import { enableProdMode } from '@angular/core';
 import { AppServerModuleNgFactory } from '../dist/ngfactory/src/app/app.server.module.ngfactory';
+=======
+import { AppServerModuleNgFactory } from "../dist/ngfactory/src/app/app.server.module.ngfactory";
+>>>>>>> b7992c660f9b1ac417d20e3b8915fd7bb46d11bd
+
+import { ngExpressEngine } from '@ngx-universal/express-engine';
+import { AppServerModule } from './app/app.server.module';
+
+import { enableProdMode } from '@angular/core';
 
 import * as express from 'express';
 import * as session from 'express-session';
@@ -14,10 +23,11 @@ import * as morgan from 'morgan';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-import * as db from './models';
+import * as db from './models/index';
 
 
 enableProdMode();
+
 
 const app = express();
 
@@ -28,14 +38,15 @@ app.use(morgan('dev'));
 
 let template = readFileSync(join(__dirname, '..', 'dist', 'index.html')).toString();
 
+app.engine('html', ngExpressEngine({
+  bootstrap: AppServerModule
+}));
 app.engine('html', (_, options, callback) => {
     const opts = { document: template, url: options.req.url };
 
     renderModuleFactory(AppServerModuleNgFactory, opts)
     .then(html => callback(null, html));
 });
-
-
 
 app.set('view engine', 'html');
 app.set('views', 'src');

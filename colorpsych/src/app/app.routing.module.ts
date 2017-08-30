@@ -4,16 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user/index';
 import { LoginComponent } from './login/index';
 import { SignupComponent } from './signup/index';
-import { AuthGuard } from './_guards/auth-guard';
+import { CreateByColorComponent } from './create-by-color/create-by-color.component';
+import { ByColorResultComponent } from './by-color-result/by-color-result.component';
 
-// import { LandingComponent } from './landing/landing';
+import { AuthGuard } from './_guards/index';
 
-const authRoutes: Routes = [
+
+const routes: Routes = [
   { path: '', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  // { path: 'user', component: UserComponent, canActivate: [AuthGuardService] }
-
+  {path: 'create-by-color', component: CreateByColorComponent},
+  {path: 'by-color-result', component: ByColorResultComponent},
 
   // redirect home
   { path: '**', redirectTo: '' }
@@ -22,7 +24,7 @@ const authRoutes: Routes = [
 
 
 @NgModule({
-  imports: [ RouterModule.forRoot(authRoutes), CommonModule ],
+  imports: [ RouterModule.forRoot(routes,{ enableTracing: true }), CommonModule ],
   exports: [ RouterModule ]
 
 })

@@ -1,7 +1,14 @@
 var bcrypt = require('bcrypt');
 
+// Model.prototype.hash = function(password) {
+//     return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+// };
+
+// Model.prototype.validPassword = function(password) {
+//     return bcrypt.compareSync(password, this.password);
+// };
 module.exports = function(sequelize, Sequelize) {
-    var Model = sequelize.define("user", {
+    var model = sequelize.define("user", {
         email: {
             type: Sequelize.STRING,
             notNull: true,
@@ -10,16 +17,13 @@ module.exports = function(sequelize, Sequelize) {
         password: {
             type: Sequelize.STRING,
             notNull: true
+        },
+        firstName: {
+            type: Sequelize.STRING
+        },
+        lastName: {
+            type: Sequelize.STRING
         }
-
     });
-    return Model;
-
-    Model.prototype.hash = function(password) {
-        return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
-    };
-
-    Model.prototype.validPassword = function(password) {
-        return bcrypt.compareSync(password, this.password);
-    };
+    return model;
 };

@@ -9,6 +9,7 @@ import { AlertService, AuthenticationService } from '../_services/index';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
   model: any = {};
   loading = false
   returnUrl: string;
@@ -39,43 +40,3 @@ export class LoginComponent implements OnInit {
         });
   }
 }
-  // login() {
-  //   this.message = "Logging in . . .";
-  //   this.loginService.login().subscribe(() => {
-  //     this.setMessage();
-  //     if (this.loginService.isLoggedIn) {
-  //       let redirect = this.loginService.redirectUrl ?
-  //       this.loginService.redirectUrl : '/user';
-  //       this.router.navigate([redirect]);
-  //     }
-  //   });
-  // }
-  // logout() {
-  //   this.loginService.logout();
-  //   this.setMessage();
-  // }
-
-
-  // createUser(newUser) {
-  //   this.loginService.create(newUser)
-  //     .subscribe(response => {
-  //       console.log(response.json());
-  //       let user = response.json();
-  //       window.location.href = '/users/' + user.email;
-
-  //     });
-  // }
-  // getLogin(email, password): void {
-  //   email = email.trim();
-  //   password = password.trim();
-  //   this.newUser = {
-  //     email : this.email,
-  //     password : this.password
-  //   };
-  //   this.createUser(this.newUser);
-  // }
-  // show(): void {
-  //   this.loginService.getAllUsers();
-  // }
-
-

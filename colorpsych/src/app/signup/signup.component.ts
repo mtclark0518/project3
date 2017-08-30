@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { AlertService, UserService } from '../_services/index';
 
 
-
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -40,10 +38,3 @@ export class SignupComponent {
   }
 }
 
-
-// signup(email, password): void {
-//   email = email.trim();
-//   password = password.trim();
-
-//   console.log(email + password);
-//   }

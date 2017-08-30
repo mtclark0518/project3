@@ -3,6 +3,12 @@ module.exports = function(sequelize, Sequelize) {
         count: {
             type: Sequelize.INTEGER // just a placeholder for now
         },
+        // attrib_id: {
+        //   type: Sequelize.INTEGER
+        // },
+        // color_id: {
+        //   type: Sequelize.INTEGER
+        // },
     });
     return model;
 };
