@@ -13,13 +13,13 @@ import * as express from 'express';
 import * as session from 'express-session';
 import * as bodyParser from 'body-parser';
 import * as passport from 'passport';
-import * as flash from 'connect-flash';
+//import * as flash from 'connect-flash';
 import * as morgan from 'morgan';
 // import class db from './models';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-nk
+
 import { router as expressRouter } from './config/routes';
 
 import * as db from './models/index';
