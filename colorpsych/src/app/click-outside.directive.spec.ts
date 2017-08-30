@@ -1,5 +1,5 @@
-// import { ClickOutsideDirective } from './click-outside.directive';
+import { ClickOutsideDirective } from './click-outside.directive';
 
-// describe('ClickOutsideDirective', () => {
+describe('ClickOutsideDirective', () => {
  
-// });
+});
