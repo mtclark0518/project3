@@ -1,3 +1,6 @@
+
+  	// tslint:disable:no-trailing-whitespace
+
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 // import { ClickOutsideDirective } from '../click-outside.directive';
 
@@ -10,6 +13,7 @@ import { Component, OnInit, AfterContentInit } from '@angular/core';
 export class NavigationComponent implements OnInit  {
 
 	navExpanded = false;
+
 
 	dismissNav(event) {
 		this.navExpanded = false;
