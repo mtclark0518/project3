@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: '', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  {path: 'create-by-color', component: CreateByColorComponent},
-  {path: 'by-color-result', component: ByColorResultComponent},
+  { path: 'create-by-color', component: CreateByColorComponent},
+  { path: 'by-color-result', component: ByColorResultComponent},
 
   // redirect home
   { path: '**', redirectTo: '' }

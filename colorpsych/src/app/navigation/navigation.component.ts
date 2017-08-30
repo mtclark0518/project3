@@ -1,31 +1,31 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
-import { ClickOutsideDirective } from '../click-outside.directive';
+// import { Component, OnInit, AfterContentInit } from '@angular/core';
+// import { ClickOutsideDirective } from '../click-outside.directive';
 
-@Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
- })
+// @Component({
+//   selector: 'app-navigation',
+//   templateUrl: './navigation.component.html',
+//   styleUrls: ['./navigation.component.scss']
+//  })
 
-export class NavigationComponent implements OnInit  {
+// export class NavigationComponent implements OnInit  {
 
-	navExpanded = false;
+// 	navExpanded = false;
 
-	dismissNav() {
-		this.navExpanded = false;
-	}
-	toggleNav() {
-		if (!this.navExpanded) {
-			this.navExpanded = true;
-		} else {
-			this.navExpanded = false;
-		}
-	}
+// 	dismissNav() {
+// 		this.navExpanded = false;
+// 	}
+// 	toggleNav() {
+// 		if (!this.navExpanded) {
+// 			this.navExpanded = true;
+// 		} else {
+// 			this.navExpanded = false;
+// 		}
+// 	}
 
-  constructor() { }
+//   constructor() { }
 
-  ngOnInit() {
+//   ngOnInit() {
   	
-  }
+//   }
 
-}
+// }

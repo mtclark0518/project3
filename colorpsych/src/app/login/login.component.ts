@@ -16,14 +16,13 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,    
+    private router: Router,
     private authenticationService: AuthenticationService,
     private alertService: AlertService) {}
 
   ngOnInit() {
     // reset login status
     this.authenticationService.logout();
-    
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
