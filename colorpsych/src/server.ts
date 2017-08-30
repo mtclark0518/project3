@@ -61,6 +61,6 @@ import { router as expressRouter } from './config/routes';
 app.use('/', expressRouter);
 
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(3000, function () {
     console.log('all systems go');
 });

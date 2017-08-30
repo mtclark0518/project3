@@ -13,7 +13,7 @@ router.get('/api/users', userController.index);
 router.post('/api/users', userController.create);
 // show
 // router.get('[route]', ['controllerName'].show);
-
+// router.get('/api/users/:id', userController.show);
 // update
 // router.put('[route]', ['controllerName'].update);
 

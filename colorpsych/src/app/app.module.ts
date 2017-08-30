@@ -1,20 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { Http, HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app.routing.module';
-import { AuthRoutingModule } from './authentication/auth-routing/auth.routing.module';
-
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { SignupComponent } from './authentication/signup/signup.component';
+
+import { AppRoutingModule } from './app.routing.module';
+import { AlertComponent } from './_directives/index';
+import { AuthGuard } from './_guards/index';
+
+import { AlertService, AuthenticationService, UserService } from './_services/index';
+  
+import { UserComponent } from './user/index';
+import { LoginComponent } from './login/index';
+import { SignupComponent } from './signup/index';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticationComponent,
+    AlertComponent,
+    UserComponent,
     LoginComponent,
     SignupComponent
   ],
@@ -22,12 +26,15 @@ import { SignupComponent } from './authentication/signup/signup.component';
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
     FormsModule,
     HttpModule,
-    HttpClientModule,
     AppRoutingModule,
-    AuthRoutingModule
 
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
