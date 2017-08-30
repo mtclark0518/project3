@@ -2,7 +2,7 @@
   	// tslint:disable:no-trailing-whitespace
 
 import { Component, OnInit, AfterContentInit } from '@angular/core';
-import { ClickOutsideDirective } from '../click-outside.directive';
+// import { ClickOutsideDirective } from '../click-outside.directive';
 
 @Component({
   selector: 'app-navigation',

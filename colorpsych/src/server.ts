@@ -52,12 +52,12 @@ app.get('*', (req, res) => {
     res.render('index', { req });
 });
 
-app.use(session({ secret: 'PROJECT-3' }));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
+// app.use(session({ secret: 'PROJECT-3' }));
+// app.use(passport.initialize());
+// app.use(passport.session());
+// app.use(flash());
 
-require('./config/passport.js')(passport);
+// require('./config/passport.js')(passport);
 
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
