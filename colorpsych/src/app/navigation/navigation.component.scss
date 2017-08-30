@@ -1,5 +1,3 @@
-// $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
-// @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 @import '../../styles.scss';
 nav {
     position: fixed;
@@ -16,7 +14,7 @@ nav {
         width: 100%;
         list-style: none;
         padding: 0;
-        background: $grey700;
+        background: rgba(50, 50, 50, 0.9);
         li {
             width: 100%;
             height: 60px;

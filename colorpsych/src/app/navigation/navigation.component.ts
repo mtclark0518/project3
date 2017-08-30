@@ -1,4 +1,5 @@
-// import { Component, OnInit, AfterContentInit } from '@angular/core';
+
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 // import { ClickOutsideDirective } from '../click-outside.directive';
 
 // @Component({
@@ -11,16 +12,17 @@
 
 // 	navExpanded = false;
 
-// 	dismissNav() {
-// 		this.navExpanded = false;
-// 	}
-// 	toggleNav() {
-// 		if (!this.navExpanded) {
-// 			this.navExpanded = true;
-// 		} else {
-// 			this.navExpanded = false;
-// 		}
-// 	}
+
+	dismissNav(event) {
+		this.navExpanded = false;
+	}
+	toggleNav() {
+		if (!this.navExpanded) {
+			this.navExpanded = true;
+		} else {
+			this.navExpanded = false;
+		}
+	}
 
 //   constructor() { }
 
