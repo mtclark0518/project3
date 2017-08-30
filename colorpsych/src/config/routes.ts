@@ -8,6 +8,11 @@ import { userController } from '../controllers/user.controller';
 // index
 // router.get('[route]', ['controllerName'].index);
 router.get('/api/users', userController.index);
+router.post('/api/authenticate', function(req, res){
+    console.log(req.body, req);
+    res.send('this is a facking response ya bitch');
+
+});
 // create
 // router.post('[route]', ['controllerName'].create);
 router.post('/api/users', userController.create);

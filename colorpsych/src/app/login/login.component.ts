@@ -11,7 +11,7 @@ import { AlertService, AuthenticationService } from '../_services/index';
 export class LoginComponent implements OnInit {
 
   model: any = {};
-  loading = false
+  loading = false;
   returnUrl: string;
 
   constructor(
@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loading = true;
+    console.log(this.model.email);
+    console.log(this.returnUrl);
     this.authenticationService.login(this.model.email, this.model.password)
       .subscribe(
         data => {
@@ -39,3 +41,4 @@ export class LoginComponent implements OnInit {
         });
   }
 }
+

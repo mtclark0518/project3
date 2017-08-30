@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { Http, HttpModule } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -14,7 +13,6 @@ import { SignupComponent } from './signup/index';
 import { CreateByAttributeComponent } from './create-by-attribute/create-by-attribute.component';
 import { CreateByColorComponent } from './create-by-color/create-by-color.component';
 import { ByColorResultComponent } from './by-color-result/by-color-result.component';
-// import { ClickOutsideDirective } from './click-outside.directive';
 
 import { AppRoutingModule } from './app.routing.module';
 
@@ -31,7 +29,6 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     CreateByColorComponent,
     ByColorResultComponent,
     NavigationComponent,
-    // ClickOutsideDirective,
     CreateByAttributeComponent
   ],
   imports: [
