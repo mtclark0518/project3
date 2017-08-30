@@ -13,7 +13,7 @@ import * as express from 'express';
 import * as session from 'express-session';
 import * as bodyParser from 'body-parser';
 import * as passport from 'passport';
-import * as flash from 'connect-flash';
+// import * as flash from 'connect-flash';
 import * as morgan from 'morgan';
 // import class db from './models';
 import { readFileSync } from 'fs';
