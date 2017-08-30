@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Http, HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user/index';
 import { LoginComponent } from './login/index';
