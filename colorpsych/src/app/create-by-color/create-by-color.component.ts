@@ -10,6 +10,7 @@ export class CreateByColorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  	
   }
 
 }
