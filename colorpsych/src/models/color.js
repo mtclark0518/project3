@@ -1,5 +1,9 @@
-
 module.exports = function(sequelize, Sequelize){
+
+  /*
+   * Color table schema: id, name, isNeutral, hex, rgb, cymk
+   */
+
   var model = sequelize.define("color", {
     id: { 
       type: Sequelize.INTEGER, 

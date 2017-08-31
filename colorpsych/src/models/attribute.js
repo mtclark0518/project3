@@ -1,4 +1,9 @@
 module.exports = function(sequelize, Sequelize){
+
+  /* 
+   * Attribute table schema: id, name, description, complement
+   */
+
   var model = sequelize.define("attribute", {
     id: { 
       type: Sequelize.INTEGER, 
