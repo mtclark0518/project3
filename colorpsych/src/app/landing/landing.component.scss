@@ -17,24 +17,51 @@
 		font-weight: 300;
 		letter-spacing: .05em;
 	}
-	p {
-		margin: 25px auto 0 auto;
-		font-size: 1.2em;
-		font-weight: 400;
-		letter-spacing: .05em;
-		text-align: left;
-	}
-	form {
-		margin: 25px auto 0 auto;
-	}
-	.setPalette {
-		text-align: center;
+
+	@media(min-width: 650px) {
+		.left {
+			display: inline-block;
+			width: 50%;
+			float: left;
+		}
+		.right {
+			display: inline-block;
+			width: 50%;
+			float: right;
+		}
+		p {
+			margin: 0 auto;
+			width: 80%;
+			height: 100px;
+			display: block;
+			font-size: 1.2em;
+		}
+		form {
+			margin: 25px auto 0 auto;
+		}
+		.setPalette {
+			text-align: center;
+		}
+		background {
+
+		}
+
 	}
 }
-
+.descriptions {
+	display: block;
+	height: 200px;
+	width: 100%;
+	margin: 50px auto 0 auto;
+}
 .colorBar {
 	margin: 50px;
 }
 .getStarted {
-	text-align: center;
+	text-align: left;
+}
+
+button {
+	display: block;
+	margin: 0 auto 50px auto;
 }
