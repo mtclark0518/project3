@@ -74,3 +74,25 @@ button {
 	bottom: 0;
 	z-index: 11;
 }
+
+/* LOGO */
+.logo {
+	text-align: center;
+	margin: 0 auto;
+	.icon {
+		height: 20px;
+		margin-top: -5px;
+		display: inline;
+	}
+	.wordmark {
+		margin-left: 5px;
+		color: white;
+		display: inline;
+		font-weight: 900;
+		letter-spacing: .08em;
+
+
+
+	}
+}
+
