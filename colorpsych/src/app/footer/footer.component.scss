@@ -1,17 +1,42 @@
 @import '../../styles.scss';
 
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+    height: 275spx;
+    width: 100%;
+    background: #212121;
+}
+
 .footerText {
     text-align: center;
     color: white;
     font-weight: 900;
     letter-spacing: 0.25em;
 }
+
 ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 	text-align: center;
 }
+
 li {
 	font-weight: 700;
 	text-transform: uppercase;
-	text-decoration: none;
 	display: inline-block;
+	text-decoration: none;
+	padding: 14px 16px;
+}
+
+a:hover {
+	color: $teal;
+}
+
+.copyright {
+	text-align: center;
+	color: $grey500;
 }
