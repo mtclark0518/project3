@@ -4,98 +4,47 @@ import * as Sequelize from 'sequelize';
 
 
 var sequelize = new Sequelize(process.env.DATABASE_URL || 
-                              'postgres://TheTDrive@localhost:5432/color_psych');
+                              'postgres://conk@localhost:5432/color_psych');
 
 
 var User = sequelize.import("./user");
-
 var Color = sequelize.import("./color");
-  // var Color = sequelize.define("color", {
-  //   id: { 
-  //     type: Sequelize.INTEGER, 
-  //     primaryKey: true,
-  //     autoIncrement: true
-  //   },
-  //   name: { 
-  //     type: Sequelize.STRING,
-  //     notNull: true
-  //   },
-  //   isNeutral: {
-  //     type: Sequelize.BOOLEAN,
-  //     notNull: true
-  //   },
-  //   hex: {
-  //     type: Sequelize.STRING,
-  //     notNull: true
-  //   },
-  //   rgb: {
-  //     type: Sequelize.STRING,
-  //     notNull: true
-  //   },
-  //   cymk: {
-  //     type: Sequelize.STRING,
-  //     notNull: true
-  //   },
-  // });
-
 var Attribute = sequelize.import("./attribute");
-  // var Attribute = sequelize.define("attribute", {
-  //   id: { 
-  //     type: Sequelize.INTEGER, 
-  //     primaryKey: true,
-  //     autoIncrement: true
-  //   },
-  //   name: { 
-  //     type: Sequelize.STRING,
-  //     notNull: true
-  //   },
-  //   description: { 
-  //     type: Sequelize.STRING 
-  //   },
-  //   complement: { 
-  //     type: Sequelize.STRING 
-  //   },
-  // });
-
 var Palette = sequelize.import("./palette")
 
 
 Palette.belongsTo(User, {
-    // through: 'user_palettes',
-}); // association key is in Palette
-
-User.hasMany(Palette, {
-    // through: 'user_palettes',
+  // don't need through because palette tale contains userId
+  // through: 'user_palettes',  
 });
 
-Palette.belongsToMany(Color, {  // hasMany?
-  through: 'palette_colors',
+User.hasMany(Palette, {
+  // don't need through because palette tale contains userId
+  // through: 'user_palettes',  
+});
+
+Palette.belongsToMany(Color, { 
+  through: 'palette_colors',    // this relationship table is auto-generated
 })
 
 Color.belongsToMany(Palette, {
-  through: 'palette_colors',
+  through: 'palette_colors',    // this relationship table is auto-generated
 });
 
-Palette.belongsToMany(Attribute, {  // hasMany?
-  through: 'palette_attributes',
+Palette.belongsToMany(Attribute, {
+  through: 'palette_attributes',  // this relationship table is auto-generated
 });
 
 Attribute.belongsToMany(Palette, {
-  through: 'palette_attributes',
+  through: 'palette_attributes',  // this relationship table is auto-generated
 });
 
 Attribute.Color = Attribute.belongsToMany(Color, {
-  // as: 'Colors',
-  // through: Color_Attribute,
-  through: 'color_attributes',
-  // foreignKey: 'attrib_id'
+  through: 'color_attributes',  // this relationship table is auto-generated
 });
 
 Color.Attribute = Color.belongsToMany(Attribute, {
-  // as: 'Attributes',
-  // through: Color_Attribute,
-  through: 'color_attributes',
-  // foreignKey:'color_id'
+  through: 'color_attributes',  // this relationship table is auto-generated
 });
 
 const db = <any>{};
@@ -103,7 +52,6 @@ db.models = {
   User,
   Color,
   Attribute,
-
   Palette
 };
 
