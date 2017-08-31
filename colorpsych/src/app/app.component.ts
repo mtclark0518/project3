@@ -3,7 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 
 
 import { NavigationComponent } from './navigation/navigation.component';
-import { CreateByAttributeComponent } from './create-by-attribute/create-by-attribute.component';
+import { CreateByAttributeDismissComponent } from './create-by-attribute-dismiss/create-by-attribute-dismiss.component';
 
 @Component({
   selector: 'app-root',

@@ -14,7 +14,7 @@ import { SignupComponent } from './signup/index';
 /* COMPONENTS */
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { CreateByAttributeComponent } from './create-by-attribute/create-by-attribute.component';
+import { CreateByAttributeDismissComponent } from './create-by-attribute-dismiss/create-by-attribute-dismiss.component';
 import { CreateByColorComponent } from './create-by-color/create-by-color.component';
 import { ByColorResultComponent } from './by-color-result/by-color-result.component';
 
@@ -25,9 +25,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app.routing.module';
 import { UserRoutingModule } from './user/user-routing/user-routing.module';
 
-
+import { AlertService, AuthenticationService, UserService, ByAttributeService } from './_services/index';
+import { CreateByAttributeChooseComponent } from './create-by-attribute-choose/create-by-attribute-choose.component';
 // import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { LandingComponent } from './landing/landing.component';
 
 
@@ -40,12 +40,12 @@ import { LandingComponent } from './landing/landing.component';
     CreateByColorComponent,
     ByColorResultComponent,
     NavigationComponent,
-
-    // ClickOutsideDirective,
-    CreateByAttributeComponent,
+    CreateByAttributeDismissComponent,
+    CreateByAttributeChooseComponent,
     AboutComponent,
     FooterComponent,
     LandingComponent
+
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
@@ -60,6 +60,7 @@ import { LandingComponent } from './landing/landing.component';
     AlertService,
     AuthenticationService,
     UserService,
+    ByAttributeService
   ],
   bootstrap: [AppComponent]
 })
