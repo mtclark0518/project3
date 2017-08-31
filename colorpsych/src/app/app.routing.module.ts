@@ -8,11 +8,13 @@ import { SignupComponent } from './signup/index';
 import { CreateByColorComponent } from './create-by-color/create-by-color.component';
 import { ByColorResultComponent } from './by-color-result/by-color-result.component';
 
-import { AuthGuard } from './_guards/index';
+// import { AuthGuard } from './_guards/index';
 
 
 const routes: Routes = [
-  { path: '', component: UserComponent, canActivate: [AuthGuard] },
+  { path: '', component: UserComponent,
+  // canActivate: [AuthGuard]
+},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'create-by-color', component: CreateByColorComponent},

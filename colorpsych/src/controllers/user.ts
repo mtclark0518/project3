@@ -14,21 +14,62 @@ function userIndex(req, res) {
 }
 // POST
 function create(req, res) {
-    console.log(req.params, req.body);
-              res.status(404).send('ERROR: cannot create user');
-
-    // User.create(req.body)
-    // .then(function(user) {
-    //     if (!user) {
-    //           res.status(404).send('ERROR: cannot create user');
-    //     } else {
-    //         res.json(user);
-    //     }
-    // });
+    User.create(req.body).then(function(user){
+    if (!user) {res.send(res, 'not saved');
+    } else {
+        res.json(user);
+    }
+  });
+}
+function findUser(email) {
+    User.findAll().then(function(users) {
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].email === email) {
+            return email;
+            }
+        }
+    return -1;
+    });
 }
 
+
+function showByEmail(req, res) {
+    const where = findUser(req.params.email);
+    console.log('showByEmail: ' + where);
+    res.send('a response'); }
+
+//     if (where === e) {
+//         res.json(users[where]);
+//     } else {
+//         res.status(404).send('ERROR: no user found');
+//     }
+// }
+function showById(req, res) {
+    User.findById(req.params.id)
+    .then(function(user) {
+        if (!user) {
+            res.send(res, 'user not found');
+        } else {
+            res.json(user);
+        }
+    });
+}
+// function create(req, res) {
+//     console.log(req.params, req.body);
+//             //   res.status(404).send('ERROR: cannot create user');
+
+//     User.create(req.body)
+//     .then(function(user) {
+//         if (!user) {
+//               res.status(404).send('ERROR: cannot create user');
+//         } else {
+//             res.json(user);
+//         }
+//     });
+// }
+
 // //SIGNUP
-// //GET 
+// //GET
 // function getSignup(request, response, next) {
 //     response.render('signup', { message: request.flash('signupMessage') });
 // }
@@ -46,7 +87,7 @@ function create(req, res) {
 
 
 // ////LOGIN
-// //GET 
+// //GET
 // function getLogin(request, response, next) {
 //     response.render('login', { message: request.flash('loginMessage') });
 // }
@@ -71,10 +112,13 @@ function create(req, res) {
 const userController = <any>{};
     userController.userIndex = userIndex;
     userController.create = create;
+    userController.showByEmail = showByEmail;
+    userController.showById = showById;
     // getLogout: getLogout,
     // getLogin: getLogin,
     // postLogin: postLogin,
     // getSignup: getSignup,
     // postSignup: postSignup
-export{userController};
+
+    export{userController};
 

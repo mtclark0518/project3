@@ -16,7 +16,7 @@ import { ByColorResultComponent } from './by-color-result/by-color-result.compon
 
 import { AppRoutingModule } from './app.routing.module';
 
-import { AuthGuard } from './_guards/index';
+// import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
 
 @NgModule({
@@ -38,7 +38,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     AppRoutingModule,
   ],
   providers: [
-    AuthGuard,
+    // AuthGuard,
     AlertService,
     AuthenticationService,
     UserService,

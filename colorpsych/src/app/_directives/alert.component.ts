@@ -11,7 +11,7 @@ import { AlertService } from '../_services/alert.service';
 export class AlertComponent implements OnDestroy {
   private subscription: Subscription;
   message: any;
-  constructor(private alertService: AlertService) { this.subscription = alertService.getMessage().subscribe(message => {this.message = message}) }
+  constructor(private alertService: AlertService) { this.subscription = alertService.getMessage().subscribe(message => {this.message = message}); }
 
   ngOnDestroy(): void {
   this.subscription.unsubscribe();
