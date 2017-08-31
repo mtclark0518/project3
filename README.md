@@ -1,5 +1,5 @@
 # Color Psychology
-Contributors:  Ian Nordeck, Connie Kephart, Tyler Clark, Jeff Reynolds
+Contributors:  [Ian Nordeck](https://github.com/inordeck), [Connie Kephart](https://github.com/SpindleMonkey), [Tyler Clark](https://github.com/mtclark0518), [Jeff Reynolds](https://github.com/jeffDevelops)
 
 ## Scope
 ### Why make this app?
@@ -99,6 +99,18 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 * Attributes
 	* Attribute Detail
 * About the App / Team Profile
+
+## Technologies/Languages
+* Node
+* Angular
+* Express
+* Sequelize
+* Passport JWT
+* Sass
+* HTML
+* CSS
+* JavaScript
+* TypeScript
 
 ## User Research
 ### Questions
