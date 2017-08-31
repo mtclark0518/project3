@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ByAttributeService } from '../_services/index';
 
+
 const dichotomies = [
 	{
 		descriptor1: {
