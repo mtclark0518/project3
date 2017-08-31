@@ -44,6 +44,17 @@ label {
 	color: #9e9e9e;
 }
 
+blockquote {
+    font-size: 3em;
+    font-weight: 100;
+    font-style: italic;
+    color: $grey700;
+}
+
+figcaption {
+    text-align: center; 
+}
+
 /* LINKS */
 .inlineLink {
 	font-weight: 700;
