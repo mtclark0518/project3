@@ -409,16 +409,35 @@ function attribByName(req, res) {
 
 
 function paletteNew(req, res) {
-  console.log('paletteNew: ' + req.params);
-  res.status(404).send('ERROR: cannot create palette');
+  console.log('paletteNew: ' + req.body.name);
+  Palette.findOrCreate({
+    where: {
+      name: req.body.name,
+      format: req.body.format,
+      notes: req.body.notes
+    }
+  })
+  .spread((palette, created) => {
+    console.log(palette.get({
+      plain: true
+    }))
+
+    console.log('created: ' + created)
+    if (created) {
+      palette.setUser(req.body.userId)  // need to get user record for this
+      res.json(palette)
+    } else {
+      res.send('ERROR: palette already exists')
+    }
+  })
 }
 
 
 function palettesById(req, res) {
-  console.log('palettesById: ' + req.params);
+  console.log('palettesById: ' + req.params.id);
   Palette.findAll({
     where: {
-      id: req.params.id
+      userId: req.params.id
     }
   })
   .then(function(palettes) {
