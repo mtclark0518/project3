@@ -1,5 +1,5 @@
 
-//Connect
+// Connect
 import * as Sequelize from 'sequelize';
 const sequelize = new Sequelize('postgres://TheTDrive@localhost:5432/color_psych');
 const User = sequelize.import('./user');
@@ -43,21 +43,21 @@ const Color = sequelize.define('color', {
     // }
   });
 // var Attribute = sequelize.import("./attribute");
-  var Attribute = sequelize.define("attribute", {
-    id: { 
-      type: Sequelize.INTEGER, 
+  const Attribute = sequelize.define('attribute', {
+    id: {
+      type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    name: { 
+    name: {
       type: Sequelize.STRING,
       notNull: true
     },
-    description: { 
-      type: Sequelize.STRING 
+    description: {
+      type: Sequelize.STRING
     },
-    complement: { 
-      type: Sequelize.STRING 
+    complement: {
+      type: Sequelize.STRING
     },
     // colorId: {
     //   type: Sequelize.INTEGER,
@@ -72,7 +72,7 @@ const Color = sequelize.define('color', {
     // }
   });
 // var Palette = sequelize.import("./palette")
-var Palette = sequelize.import("./palette")
+const Palette = sequelize.import('./palette')
 
 
 Palette.belongsTo(User, {
@@ -99,7 +99,7 @@ Attribute.belongsToMany(Palette, {
     through: 'palette_attributes',
 });
 
-Attribute.Color = Attribute.belongsToMany(Color, { 
+Attribute.Color = Attribute.belongsToMany(Color, {
   // as: 'Colors',
   // through: Color_Attribute,
   through: 'color_attributes',
@@ -137,11 +137,11 @@ db.models = {
   User,
   Color,
   Attribute,
-  Color_Attribute,  
+  Color_Attribute,
   Palette
 };
 
-//Export models and Sequelize for seed and dbSetup
+// Export models and Sequelize for seed and dbSetup
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 

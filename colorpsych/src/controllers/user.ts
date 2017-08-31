@@ -1,4 +1,5 @@
 import * as passport from 'passport';
+import * as passportJWT from 'passport-jwt';
 import { db } from '../models';
 
 const User = db.models.User;
@@ -6,20 +7,24 @@ const User = db.models.User;
 
 
 // GET
-function index(req, res) {
+function userIndex(req, res) {
     User.findAll().then(function(users) {
         res.json(users);
     });
 }
 // POST
 function create(req, res) {
-    User.create(req.body).then(function(user) {
-        if (!user) {
-            res.send('user not saved');
-        } else {
-            res.json(user);
-        }
-    });
+    console.log(req.params, req.body);
+              res.status(404).send('ERROR: cannot create user');
+
+    // User.create(req.body)
+    // .then(function(user) {
+    //     if (!user) {
+    //           res.status(404).send('ERROR: cannot create user');
+    //     } else {
+    //         res.json(user);
+    //     }
+    // });
 }
 
 // //SIGNUP
@@ -32,7 +37,7 @@ function create(req, res) {
 // function postSignup(request, response, next) {
 //     var signupStrategy = passport.authenticate('local-signup', {
 
-//         successRedirect: '/profile/' + request.body.email,
+//         successRedirect: '/user/' + request.body.email,
 //         failureRedirect: '/signup',
 //         failureFlash: true
 //     });
@@ -64,7 +69,7 @@ function create(req, res) {
 
 
 const userController = <any>{};
-    userController.index = index;
+    userController.userIndex = userIndex;
     userController.create = create;
     // getLogout: getLogout,
     // getLogin: getLogin,

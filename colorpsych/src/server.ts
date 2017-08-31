@@ -19,7 +19,7 @@ import * as morgan from 'morgan';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-nk
+
 import { router as expressRouter } from './config/routes';
 
 import * as db from './models/index';

@@ -3,30 +3,38 @@ const router = express.Router();
 
 import * as passport from 'passport';
 
-import { apisController } from '../controllers/apis';
-import { userController } from '../controllers/user.controller';
+import { apisController, userController } from '../controllers/index';
 
-
+// FOR REFERENCE
 // index
 // router.get('[route]', ['controllerName'].index);
-router.get('/api/users', userController.index);
-router.post('/api/authenticate', function(req, res){
-    console.log(req.body, req);
-    res.send('this is a facking response ya bitch');
 
-});
 // create
 // router.post('[route]', ['controllerName'].create);
-router.post('/api/users', userController.create);
+
 // show
 // router.get('[route]', ['controllerName'].show);
-// router.get('/api/users/:id', userController.show);
+
 // update
 // router.put('[route]', ['controllerName'].update);
 
 // destroy
 // router.delete('[route]', ['controllerName'].destroy);
 
+
+// USER ROUTES
+// GET all users
+router.get('/api/users', userController.userIndex);
+
+// POST new user
+router.post('/api/users', userController.create);
+
+// GET user by email
+// router.get('/api/user/:email', userController.userByEmail);
+
+
+
+// COLOR/PALETTE/ATTRIBUTE ROUTES
 // GET color by name
 router.get('/api/colors/:name', apisController.colorByName);
 

@@ -1,8 +1,8 @@
 import { db } from '../models';
-var Palette = db.models.Palette;
+const Palette = db.models.Palette;
 
 // hard-coded color and attribute data
-var colors = [
+const colors = [
   {
     name: 'lime green',
     isNeutral: false,
@@ -369,7 +369,7 @@ var attributes = [
 
 
 function findColor(colorName) {
-  for (var i = 0; i < colors.length; i++) {
+  for (let i = 0; i < colors.length; i++) {
     if (colors[i].name === colorName) {
       return i;
     }
@@ -378,7 +378,7 @@ function findColor(colorName) {
 }
 
 function colorByName(req, res) {
-  var where  = findColor(req.params.name);
+  const where  = findColor(req.params.name);
   console.log('colorByName: ' + colors[where]);
   if (where >= 0) {
     res.json(colors[where]);
@@ -389,7 +389,7 @@ function colorByName(req, res) {
 
 
 function findAttrib(attribName) {
-  for (var i = 0; i < attributes.length; i++) {
+  for (let i = 0; i < attributes.length; i++) {
     if (attributes[i].name === attribName) {
       return i;
     }
@@ -398,7 +398,7 @@ function findAttrib(attribName) {
 }
 
 function attribByName(req, res) {
-  var where  = findAttrib(req.params.name);
+  const where  = findAttrib(req.params.name);
   console.log('attribByName: ' + attributes[where]);
   if (where >= 0) {
     res.json(attributes[where]);
