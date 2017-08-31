@@ -15,6 +15,20 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 * Render a complementary, monochromatic, analogous, triad, compound, or shades color palette based on the user's selected personality attribute(s).
 * Color accessibility
 
+## Installation
+### To run locally:
+1. Clone from GitHub: https://github.com/mtclark0518/project3
+2. Set up the postgres database
+  * Start the database (postgres -D /usr/local/var/postgres)
+  * Create the color_psych db (CREATE DATABASE color_psych)
+  * Setup the db for the app (ts-node src/db/dbSetup.ts)
+  * Seed the db with colors and attributes (ts-node src/db/seed.ts)
+3. Build and run the app (npm start)
+4. App is running at localhost:3000
+
+### To run anywhere in the world:
+[https://hidden-citadel-94665.herokuapp.com/](https://hidden-citadel-94665.herokuapp.com/)
+
 ## Data Models
 ### Entity Relationship Diagram (ERD)
 ![ERD](/colorpsych/assets/ERD.JPG)
@@ -97,3 +111,11 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 	* If you could convey a feeling to the masses about your product and your company, what would you try to convey? 
 	* From a mass communications standpoint, a lot of [marketing research](http://www.jstor.org/stable/3151897?seq=1#page_scan_tab_contents) has suggested that branding colors have a psychological effect on consumers viewing a brand. What would you want your branding to convey to potential customers?
 ### Findings
+User 1:
+1. It's a very vivid color, noticeable.
+   * Blue is safe looking and it's a strong color.
+2. Yes. Usually you either like it or don't, but I don't think I've ever avoided a company because of the colors they used.
+3. Teal and lime because I like them.
+4. Coaching
+   * Competent, honest, personal, safe
+   * See above!
