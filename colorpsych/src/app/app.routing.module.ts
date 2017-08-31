@@ -11,11 +11,13 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 
-import { AuthGuard } from './_guards/index';
+// import { AuthGuard } from './_guards/index';
 
 
 const routes: Routes = [
-  { path: '', component: UserComponent, canActivate: [AuthGuard] },
+  { path: '', component: LoginComponent,
+  // canActivate: [AuthGuard]
+},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'create-by-color', component: CreateByColorComponent},
@@ -28,6 +30,7 @@ const routes: Routes = [
   { path: '**', redirectTo: '' },
 
 ];
+
 
 
 @NgModule({

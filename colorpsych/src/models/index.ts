@@ -1,8 +1,11 @@
 
-//Connect
+// Connect
 import * as Sequelize from 'sequelize';
 
-var sequelize = new Sequelize('postgres://conk@localhost:5432/color_psych');
+
+var sequelize = new Sequelize(process.env.DATABASE_URL || 
+                              'postgres://TheTDrive@localhost:5432/color_psych');
+
 
 var User = sequelize.import("./user");
 
@@ -81,7 +84,7 @@ Attribute.belongsToMany(Palette, {
   through: 'palette_attributes',
 });
 
-Attribute.Color = Attribute.belongsToMany(Color, { 
+Attribute.Color = Attribute.belongsToMany(Color, {
   // as: 'Colors',
   // through: Color_Attribute,
   through: 'color_attributes',
@@ -100,10 +103,11 @@ db.models = {
   User,
   Color,
   Attribute,
+
   Palette
 };
 
-//Export models and Sequelize for seed and dbSetup
+// Export models and Sequelize for seed and dbSetup
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 

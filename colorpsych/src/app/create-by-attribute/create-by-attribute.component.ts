@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 const dichotomies = [
 	{
 		descriptor1: {

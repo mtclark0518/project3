@@ -1,11 +1,2 @@
-<div class="container">
-    <h1>Hi {{currentUser.firstName}}!</h1>
-    <p>You're logged in</p>
-    <ul>
-        <li>
-            {{currentUser.email}} ({{currentUser.firstName}} {{currentUser.lastName}}) -
-            <a (click)="deleteUser(currentUser.id)">Delete</a>
-        </li>
-    </ul>
-    <p><a [routerLink]="['/login']">Logout</a></p>
-</div>
+<router-outlet>
+</router-outlet>
