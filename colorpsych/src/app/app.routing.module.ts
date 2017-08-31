@@ -7,6 +7,8 @@ import { LoginComponent } from './login/index';
 import { SignupComponent } from './signup/index';
 import { CreateByColorComponent } from './create-by-color/create-by-color.component';
 import { ByColorResultComponent } from './by-color-result/by-color-result.component';
+import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { AuthGuard } from './_guards/index';
 
@@ -17,9 +19,11 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'create-by-color', component: CreateByColorComponent},
   { path: 'by-color-result', component: ByColorResultComponent},
+  { path: 'about', component: AboutComponent },
+  { path: 'footer', component: FooterComponent},
 
   // redirect home
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 
 ];
 

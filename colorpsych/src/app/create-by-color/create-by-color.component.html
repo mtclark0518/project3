@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-
+<div class="body">
 <div class="flex-container">
 	<h4 class="flex-item pageTitle">create by color</h4>
 </div>
@@ -10,6 +10,7 @@
 	<!-- SELECT COLOR -->
 	<div class="flex-item card-title">
 		<h1 class="sectionTitle">select color</h1>
+		<p>Select two colors from the color wheel or the neutral palette to learn about their personality attrubutes</p>
 	</div>
 
 	<div class="flex-item colorWheel">
@@ -86,7 +87,7 @@
 
 	<!-- SELECT NEUTRAL COLOR -->
 	<div class="flex-item card-title">
-		<h2>select neutral</h2>
+		<h1 class="sectionTitle">select neutral</h1>
 	</div>
 
 	<div class="flex-item neutralColors">
@@ -111,7 +112,8 @@
 
 	<!-- SET PALETTE -->
 	<div class="flex-item setPalette">
-		<button type="button" class="btn btn-elegant waves-light hoverable">set palette</button>
+		<button routerLink="by-color-result" type="button" class="btn btn-elegant waves-light hoverable">set palette</button>
 	</div>
 
 </div> <!-- end flex container card -->
+</div> <!-- end of body class -->
