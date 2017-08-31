@@ -1,37 +1,65 @@
-<h4>create by color palette</h4>
+<router-outlet></router-outlet>
+<div class="body">
+<div class="flex-container">
+	<h4 class="flex-item pageTitle">create by color palette</h4>
+</div>
 
-<section class="row">
+<div class="row card">
     <div class="col s6">
-        <!-- COLOR -->
-        <svg width="200" height="200">
+    		<h1 class="sectionTitle">results</h1>
+
+        <!-- COLOR 1 -->
+        <svg width="100%" height="200">
 			<a xlink:href="">
-				<rect width="200" height="200" style="fill:#fff;stroke-width:2;stroke:#e0e0e0" />
+				<rect width="100%" height="200" style="fill:#ff9800;stroke-width:2;stroke:#e0e0e0" />
 			</a>
 		</svg>
 
-        <!-- <h4>{{colorName}}</h4>
-		<p>{{attributes}}</p>
-		<h5>{{hexColor}}</h5>
-		<h5>{{rgbColor}}</h5>
-		<h5>{{cmykColor}}</h5> -->
+        <h4>ORANGE</h4>
+		<p>Freethinking: Attract out-of-the-box thinkers.</p>
+		<p>Ordered: Create an efficient, self-disciplined image.</p>
+		<p>Traditional: Create a homelike, familiar feeling.</p>
+		<p>Concrete: Perceive strong organizational skills.</p>
+		<p>Ideas: Convey spontaneous, original ideas.</p>
+		<p>Skeptical: Create a critical, truthful awareness.</p>
+		<p>Thought-Provoking: Promote progressive ideas.</p>
+		<p>Bold: Promote expressive social involvements.</p>
+		<p>Extroverted: Evoke assertive, group-oriented types.</p>
+		<p>Carefree: Create lively, spontaneous interactions.</p>
+		<p>Mysterious: Evoke a mysterious, discreet ambience.</p>
+		<h5>HEX: #ff9800</h5>
+		<h5>RGB: 255r 152g 0b</h5>
+		<h5>CMYK: 0c 48m 100y 0k</h5>
 
-        <!-- NEUTRAL -->
-        <svg width="200" height="200">
+        <!-- COLOR 2 -->
+        <svg width="100%" height="200">
 			<a xlink:href="">
-				<rect width="200" height="200" style="fill:#fff;stroke-width:2;stroke:#e0e0e0" />
+				<rect width="100%" height="200" style="fill:#2196f3;stroke-width:2;stroke:#e0e0e0" />
 			</a>
 		</svg>
-        <!-- 	<h4>{{colorName}}</h4>
-		<p>{{attributes}}</p>
-		<h5>{{hexColor}}</h5>
-		<h5>{{rgbColor}}</h5>
-		<h5>{{cmykColor}}</h5> -->
+        <h4>BLUE</h4>
+		<p>Ordered: Create an efficient, self-disciplined image.</p>
+		<p>Traditional: Create a homelike, familiar feeling.</p>
+		<p>Abstract: Evoke insightful, abstract thinking.</p>
+		<p>Composed: Convery a reserved point of view.</p>
+		<p>Trustful: Encourage unsuspecting acceptance.</p>
+		<p>Introverted: Create empathetic , sensitive feelings.</p>
+		<p>Serious: Portrat restrained self-control.</p>
+		<p>Cooperative: Create a cooperative compliance.</p>
+		<p>Stable: Create a stable, conservative image.</p>
+		<p>Relaxed: Create a calming, relaxed mood.</p>
+		<h5>HEX: #2196f3</h5>
+		<h5>RGB: 33r 150g 243b</h5>
+		<h5>CMYK: 71c 34m 0y 0k</h5>
     </div>
-</section>
 
-<section class="row">
-    <div class="col s8">
-        <input type="button" name="save" value="save palette">
-        <input type="button" name="reset" value="reset palette">
-    </div>
-</section>
+	<!-- SET PALETTE -->
+	<div class="flex-item setPalette">
+		<button routerLink="/home" type="button" class="btn btn-elegant waves-light hoverable" target="_top">set palette</button>
+		<button routerLink="/create-by-color" type="button" class="btn btn-elegant waves-light hoverable" target="_top">select new colors</button>
+	</div>
+
+</div> <!-- END OF CARD CLASS -->
+
+
+</div> <!-- END OF BODY CLASS -->
