@@ -3,8 +3,8 @@
 	<h2>Create A Pallette Based On Your Brand's Identity</h2>
 	<p>We've compiled a thorough list of attributes for your branding identity that correspond to color values according to the Dewey Color System.</p>
 	<p>For this first step, dismiss any of the attribute pairs that do not immediately strike you as relevant to your brand. We'll get to ranking and selecting one out of each pair in the next step.</p>
-	<div *ngIf="dismissResults !== []"><!-- Don't render until we get user's chosen attributes from service-->
-		<button (click)="displayDismissResults">SHOW ME THE DATA</button>
+	<div *ngIf="dismissResults.length > 0"><!-- Don't render until we get user's chosen attributes from service-->
+		<button (click)="displayDismissResults()">SHOW ME THE DATA</button>
 	</div>
 
 		<div *ngFor="let pair of dismissResults; let id = index">
