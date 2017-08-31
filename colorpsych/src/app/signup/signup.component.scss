@@ -1,0 +1,22 @@
+@import '../../styles.scss';
+
+.body {
+	height: 500px;
+	width: 75%;
+	margin: 100px auto;
+	h2 {
+	color: $grey500;
+	font-weight: 600;
+	letter-spacing: .05em;
+	}
+	p {
+		margin: 25px auto 0 auto;
+		font-size: 1.2em;
+		font-weight: 400;
+		letter-spacing: .05em;
+		text-align: left;
+	}
+	form {
+		margin: 25px auto 0 auto;
+	}
+}

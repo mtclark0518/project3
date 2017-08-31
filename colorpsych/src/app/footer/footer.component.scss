@@ -1,0 +1,17 @@
+@import '../../styles.scss';
+
+.footerText {
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+}
+ul {
+	text-align: center;
+}
+li {
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+}
