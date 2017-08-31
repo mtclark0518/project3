@@ -11,11 +11,9 @@ import { UserService } from '../../_services/index';
 })
 export class UserDashComponent implements OnInit {
 
-  model: any = {};
 
 
-  returnUrl: string;
-  currentUser;
+  currentUser: User;
 
   constructor(private userService: UserService,
     private route: ActivatedRoute
@@ -27,8 +25,9 @@ export class UserDashComponent implements OnInit {
       this.userService.showByEmail(param.email)
 
       .subscribe(response => {
-        this.currentUser = response.json();
-        console.log(this.currentUser);
+        console.log(response.json());
+        this.currentUser = response.json()[0];
+        console.log(this.currentUser.firstName);
       });
     });
   }

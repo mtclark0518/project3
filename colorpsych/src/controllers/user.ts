@@ -41,6 +41,7 @@ function showByEmail(req, res) {
         }
     })
     .then(function(users) {
+        console.log(users[0].email);
         if (!users) {
             res.status(404).send('ERROR: NOT FOUND');
         } else {
