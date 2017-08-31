@@ -15,7 +15,7 @@ import { LandingComponent } from './landing/landing.component';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent,
+  { path: '', component: LandingComponent,
   // canActivate: [AuthGuard]
 },
   { path: 'login', component: LoginComponent },
