@@ -30,11 +30,11 @@ router.get('/api/users', userController.userIndex);
 router.post('/api/users', userController.create);
 
 // GET user by email
-router.get('/api/user/:email', userController.showByEmail);
+router.get('/api/users/:email', userController.showByEmail);
 
 // SHOW user by id
 
-router.get('/api/user/:id', userController.showById);
+// router.get('/api/users/:id', userController.showById);
 
 
 

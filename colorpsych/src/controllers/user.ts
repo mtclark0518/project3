@@ -21,22 +21,36 @@ function create(req, res) {
     }
   });
 }
-function findUser(email) {
-    User.findAll().then(function(users) {
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].email === email) {
-            return email;
-            }
-        }
-    return -1;
-    });
-}
-
+// function findUser(email) {
+//     User.findAll().then(function(users) {
+//         for (let i = 0; i < users.length; i++) {
+//             if (users[i].email === email) {
+//             return email;
+//             }
+//         }
+//     return -1;
+//     });
+// }
 
 function showByEmail(req, res) {
-    const where = findUser(req.params.email);
-    console.log('showByEmail: ' + where);
-    res.send('a response'); }
+    console.log('showByEmail: ' + req.params);
+    console.log(req.params.email);
+    User.findAll({
+        where: {
+            email: req.params.email
+        }
+    })
+    .then(function(users) {
+        if (!users) {
+            res.status(404).send('ERROR: NOT FOUND');
+        } else {
+            res.json(users);
+        }
+    });
+}
+    // const where = findUser(req.params.email);
+    // console.log('showByEmail: ' + where);
+    // res.send('a response'); 
 
 //     if (where === e) {
 //         res.json(users[where]);

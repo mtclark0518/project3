@@ -1,3 +1,4 @@
+import { forEach } from '@angular/router/src/utils/collection';
 import { UserComponent } from '../user';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -34,15 +35,22 @@ export class LoginComponent implements OnInit {
   }
   login() {
     this.loading = true;
-    console.log(this.returnUrl);
-    this.userService.getAll()
-    .subscribe( data => {
-      this.router.navigate(['/user']);
-    },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
+    console.log(this.model.email);
+    let test = this.userService.showByEmail(this.model.email);
+    console.log('test: ' + test);
+    this.router.navigate(['/users/' + this.model.email ]);
+    // .subscribe(data => {
+    //   console.log(data);
+    //   this.router.navigate(['/user']);
+    // });
+    // this.userService.showById()
+    // .subscribe( data => {
+    //   console.log(data);
+    // },
+    //     error => {
+    //       this.alertService.error(error);
+    //       this.loading = false;
+    //     });
     // this.authenticationService.login(this.model.email, this.model.password);
     // this.router.navigate(['/user']);
     // this.router.navigate([this.returnUrl]);
@@ -56,5 +64,7 @@ export class LoginComponent implements OnInit {
         // });
   }
 }
+
+
 
 

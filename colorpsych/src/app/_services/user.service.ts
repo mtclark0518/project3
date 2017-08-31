@@ -16,12 +16,14 @@ baseUrl = 'http://localhost:3000';
   constructor(private http: Http) { }
 
   getAll() {
-    return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());
+
+    return this.http.get(`${this.baseUrl}/api/users`);
+    // return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());
   }
 
-  getById(id: number) {
-    console.log(id);
-    return this.http.get(`${this.baseUrl}/api/users/` + id);
+  showByEmail(email: string) {
+    console.log(email);
+    return this.http.get(`${this.baseUrl}/api/users/${email}`);
 
     // return this.http.get('/api/users' + id, this.jwt()).map((response: Response) => response.json());
   }

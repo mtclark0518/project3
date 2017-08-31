@@ -12,7 +12,7 @@ import { ByColorResultComponent } from './by-color-result/by-color-result.compon
 
 
 const routes: Routes = [
-  { path: '', component: UserComponent,
+  { path: '', component: LoginComponent,
   // canActivate: [AuthGuard]
 },
   { path: 'login', component: LoginComponent },
@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: '**', redirectTo: '' }
 
 ];
+
 
 
 @NgModule({
