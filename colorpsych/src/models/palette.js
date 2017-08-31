@@ -1,4 +1,9 @@
 module.exports = function(sequelize, Sequelize){
+
+  /*
+   * palette table schema: name, format, notes
+   */
+
   var model = sequelize.define("palette", {
     name: { 
       type: Sequelize.TEXT,
