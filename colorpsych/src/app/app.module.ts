@@ -25,6 +25,7 @@ import { AppRoutingModule } from './app.routing.module';
 
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { LandingComponent } from './landing/landing.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     // ClickOutsideDirective,
     CreateByAttributeComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'colorpsych'}),

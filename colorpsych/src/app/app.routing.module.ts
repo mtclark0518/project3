@@ -9,6 +9,7 @@ import { CreateByColorComponent } from './create-by-color/create-by-color.compon
 import { ByColorResultComponent } from './by-color-result/by-color-result.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { LandingComponent } from './landing/landing.component';
 
 import { AuthGuard } from './_guards/index';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'by-color-result', component: ByColorResultComponent},
   { path: 'about', component: AboutComponent },
   { path: 'footer', component: FooterComponent},
+  { path: 'landing', component: LandingComponent},
 
   // redirect home
   { path: '**', redirectTo: '' },
