@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ByAttributeService } from '../_services/index';
 
 const dichotomies = [
 	{
@@ -11,7 +12,8 @@ const dichotomies = [
 			description: 'Create a responsible image'
 		},
 		selected: 'Freethinking',
-		rank: 1
+		dismissed: false,
+		order: 0
 	},
 	{
 		descriptor1: {
@@ -23,7 +25,8 @@ const dichotomies = [
 			description: 'Create an efficient, self-disciplined image'
 		},
 		selected: 'Spontaneous',
-		rank: 2
+		dismissed: false,
+		order: 1
 	},
 	{
 		descriptor1: {
@@ -35,7 +38,8 @@ const dichotomies = [
 			description: 'Introduce new knowledge and products'
 		},
 		selected: 'Traditional',
-		rank: 3
+		dismissed: false,
+		order: 2
 	},
 	{
 		descriptor1: {
@@ -47,7 +51,8 @@ const dichotomies = [
 			description: 'Evoke insightful, abstract thinking'
 		},
 		selected: 'Concrete',
-		rank: 4
+		dismissed: false,
+		order: 3
 	},
 	{
 		descriptor1: {
@@ -59,7 +64,8 @@ const dichotomies = [
 			description: 'Inspire imaginative experiences'
 		},
 		selected: 'Practical',
-		rank: 5
+		dismissed: false,
+		order: 4
 	},
 	{
 		descriptor1: {
@@ -71,7 +77,8 @@ const dichotomies = [
 			description: 'Convey spontaneous, original ideas'
 		},
 		selected: 'Things',
-		rank: 6
+		dismissed: false,
+		order: 5
 	},
 	{
 		descriptor1: {
@@ -83,7 +90,8 @@ const dichotomies = [
 			description: 'Encourage an uplifting, comfort-giving image'
 		},
 		selected: 'Composed',
-		rank: 7
+		dismissed: false,
+		order: 6
 	},
 	{
 		descriptor1: {
@@ -95,7 +103,8 @@ const dichotomies = [
 			description: 'Encourage forward-thinking challenges to the norm'
 		},
 		selected: 'Trustful',
-		rank: 8
+		dismissed: false,
+		order: 7
 	},
 	{
 		descriptor1: {
@@ -107,7 +116,8 @@ const dichotomies = [
 			description: 'Promote progressive ideas'
 		},
 		selected: 'Clear-thinking',
-		rank: 9
+		dismissed: false,
+		order: 8
 	},
 	{
 		descriptor1: {
@@ -119,7 +129,8 @@ const dichotomies = [
 			description: 'Promote expressive social involvements'
 		},
 		selected: 'Deliberate',
-		rank: 10
+		dismissed: false,
+		order: 9
 	},
 	{
 		descriptor1: {
@@ -131,7 +142,8 @@ const dichotomies = [
 			description: 'Create empathetic, sensitive interactions'
 		},
 		selected: 'Extroverted',
-		rank: 11
+		dismissed: false,
+		order: 10
 	},
 	{
 		descriptor1: {
@@ -143,7 +155,8 @@ const dichotomies = [
 			description: 'Create lively, spontaneous interactions'
 		},
 		selected: 'Serious',
-		rank: 12
+		dismissed: false,
+		order: 11
 	},
 	{
 		descriptor1: {
@@ -155,7 +168,8 @@ const dichotomies = [
 			description: 'Evoke dominant, forceful actions'
 		},
 		selected: 'Cooperative',
-		rank: 13
+		dismissed: false,
+		order: 12
 	},
 	{
 		descriptor1: {
@@ -167,7 +181,8 @@ const dichotomies = [
 			description: 'Create an established, conservative image'
 		},
 		selected: 'Instinctive',
-		rank: 14
+		dismissed: false,
+		order: 13
 	},
 	{
 		descriptor1: {
@@ -179,7 +194,8 @@ const dichotomies = [
 			description: 'Create a mysterious, discreet ambience'
 		},
 		selected: 'Open',
-		rank: 15
+		dismissed: false,
+		order: 14
 	},
 	{
 		descriptor1: {
@@ -191,43 +207,69 @@ const dichotomies = [
 			description: 'Evoke an attention-getting immediacy'
 		},
 		selected: 'Relaxed',
-		rank: 16
+		dismissed: false,
+		order: 15
 	}
 ];
 
 @Component({
-  selector: 'app-create-by-attribute',
-  templateUrl: './create-by-attribute.component.html',
-  styleUrls: ['./create-by-attribute.component.scss']
+  selector: 'app-create-by-attribute-dismiss',
+  templateUrl: './create-by-attribute-dismiss.component.html',
+  styleUrls: ['./create-by-attribute-dismiss.component.scss']
 })
-export class CreateByAttributeComponent implements OnInit {
+export class CreateByAttributeDismissComponent implements OnInit {
 
 	pairs = dichotomies;
-	public pairClass = 'dismissable_button_group';
-	dismissable = true;
-	dismissed = false;
+	userPairs = this.pairs.slice(0);
+	resultsArray = [];
+	public pairClass = 'dismissable_button_group'; //set initial display class to dismissable in the CSS
+
+
+	removePair(id) {
+		this.userPairs[id].dismissed = true;
+		console.log(this.userPairs[id]);
+	}
+
+	undoRemovePair(id) {
+		this.userPairs[id].dismissed = false;
+		console.log(this.userPairs[id]);
+	}
 
 	toggleDismiss(id) {
-		console.log('clicked');
-		console.log(id);
 		for (let i = 0; i < this.pairs.length; i++) {
 			if (i === id) {
-				let targetedEl = document.getElementById(id);
-				console.log(targetedEl);
-				console.log('i: ' + i + ' id: ' + id);
-				if (targetedEl.classList.contains('dismissable_button_group')) {
-					targetedEl.classList.add('dismiss');
-				} else {
+				let targetedEl = document.getElementById(`which${id}`);
+				let buttonValue = document.querySelector(`#which${id} .x_button .x`);
+				if (targetedEl.classList.contains('dismiss')) {
 					targetedEl.classList.remove('dismiss');
+					buttonValue.innerHTML = 'X';
+					this.undoRemovePair(id);
+				} else {
+					targetedEl.classList.add('dismiss');
+					buttonValue.innerHTML = 'Undo';
+					this.removePair(id);
 				}
 			}
 		}
 	}
 
-  constructor() { }
+	getUserArray() {
+		console.log(this.userPairs);
+		for (let i = 0; i < this.userPairs.length; i++) {
+			let singleResult = this.userPairs[i];
+			if (!this.userPairs[i].dismissed) {
+				this.resultsArray.push(singleResult);
+			}
+		}
+		console.log('Results Array: ' + JSON.stringify(this.resultsArray));
+		this.byAttributeService.saveDismissResults(this.resultsArray);
+		return this.resultsArray;
+	}
+
+  constructor(private byAttributeService: ByAttributeService) { }
 
   ngOnInit() {
-  	console.log(this.pairs);
+  	
   }
 
 }

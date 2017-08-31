@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateByAttributeComponent } from './create-by-attribute.component';
+import { CreateByAttributeDismissComponent } from './create-by-attribute-dismiss.component';
 
 describe('CreateByAttributeComponent', () => {
-  let component: CreateByAttributeComponent;
-  let fixture: ComponentFixture<CreateByAttributeComponent>;
+  let component: CreateByAttributeDismissComponent;
+  let fixture: ComponentFixture<CreateByAttributeDismissComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateByAttributeComponent ]
+      declarations: [ CreateByAttributeDismissComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateByAttributeComponent);
+    fixture = TestBed.createComponent(CreateByAttributeDismissComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -11,7 +11,7 @@ import { AlertComponent } from './_directives/index';
 import { UserComponent } from './user/index';
 import { LoginComponent } from './login/index';
 import { SignupComponent } from './signup/index';
-import { CreateByAttributeComponent } from './create-by-attribute/create-by-attribute.component';
+import { CreateByAttributeDismissComponent } from './create-by-attribute-dismiss/create-by-attribute-dismiss.component';
 import { CreateByColorComponent } from './create-by-color/create-by-color.component';
 import { ByColorResultComponent } from './by-color-result/by-color-result.component';
 // import { ClickOutsideDirective } from './click-outside.directive';
@@ -19,7 +19,8 @@ import { ByColorResultComponent } from './by-color-result/by-color-result.compon
 import { AppRoutingModule } from './app.routing.module';
 
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { AlertService, AuthenticationService, UserService, ByAttributeService } from './_services/index';
+import { CreateByAttributeChooseComponent } from './create-by-attribute-choose/create-by-attribute-choose.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +32,8 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     CreateByColorComponent,
     ByColorResultComponent,
     NavigationComponent,
-    // ClickOutsideDirective,
-    CreateByAttributeComponent
+    CreateByAttributeDismissComponent,
+    CreateByAttributeChooseComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
@@ -45,6 +46,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     AlertService,
     AuthenticationService,
     UserService,
+    ByAttributeService
   ],
   bootstrap: [AppComponent]
 })
