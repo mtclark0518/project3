@@ -1,18 +1,26 @@
 <nav>
-    <button (click)="toggleNav()"><i class="fa fa-bars" aria-hidden="true"></i></button>
-    <ul id="shownNav" *ngIf="navExpanded">
-        <li>
-            <!-- *ngIf="NOT LOGGED IN" -->
-            <a routerLink="/login" (click)=toggleNav()>Login</a>
-        </li>
-        <li>
-            <a routerLink="/signup" (click)=toggleNav()>Signup</a>
-        </li>
-        <li>
-            <a routerLink="/create-by-attribute" (click)=toggleNav()>Create Pallette By Branding Identity Attributes</a>
-        </li>
-        <li>
-            <a routerLink="/create-by-color" (click)=toggleNav()>Create Pallette By Color</a>
-        </li>
-    </ul>
+	<button (click)="toggleNav()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <div class="silkscreen" *ngIf="navExpanded" (click)=dismissNav()>
+        <ul id="shownNav">
+            <li> <!-- *ngIf="NOT LOGGED IN" -->
+              <a routerLink="/login" (click)=toggleNav()>Login</a>
+            </li>
+            <li>
+            	<a routerLink="/signup" (click)=toggleNav()>Signup</a>
+            </li>
+            <li>
+            	<a routerLink="/create-by-attribute" (click)=toggleNav()>Create Pallette By Branding Identity Attributes</a>
+            </li>
+        	<li>
+            	<a routerLink="/create-by-color" (click)=toggleNav()>Create Pallette By Color</a>
+            </li>
+            <li>
+                <a routerLink="/about" (click)=toggleNav()>About</a>
+            </li>
+    	</ul>
+    </div>
+    <div class="logo">
+        <img class="icon" src="../assets/favicon-96x96.png" alt="color wheel logo">
+        <h1 class="wordmark"> COLOR</h1>
+    </div>
 </nav>

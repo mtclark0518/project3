@@ -13,6 +13,7 @@ import * as express from 'express';
 import * as session from 'express-session';
 import * as bodyParser from 'body-parser';
 import * as passport from 'passport';
+
 // import * as flash from 'connect-flash';
 import * as morgan from 'morgan';
 // import class db from './models';
@@ -68,6 +69,6 @@ app.use(function(req, res, next) {
 app.use(expressRouter);
 
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log('all systems go');
 });

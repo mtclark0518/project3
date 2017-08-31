@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { Dichotomy } from '../dichotomy-model';
+
 
 const dichotomies = [
 	{
