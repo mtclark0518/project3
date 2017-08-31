@@ -2,7 +2,9 @@
 //Connect
 import * as Sequelize from 'sequelize';
 
-var sequelize = new Sequelize('postgres://conk@localhost:5432/color_psych');
+var sequelize = new Sequelize(process.env.DATABASE_URL || 
+                              'postgres://conk@localhost:5432/color_psych');
+
 
 var User = sequelize.import("./user");
 
