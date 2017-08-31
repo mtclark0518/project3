@@ -1,5 +1,8 @@
 <router-outlet></router-outlet>
+
 <div class="body">
+
+<!-- PAGE TITLE -->
 <div class="flex-container">
 	<h4 class="flex-item pageTitle">create by color</h4>
 </div>
@@ -13,8 +16,8 @@
 		<p>Select two colors from the color wheel or the neutral palette to learn about their personality attributes.</p>
 	</div>
 
+	<!-- COLOR WHEEL SVG -->
 	<div class="flex-item colorWheel">
-		<!-- color wheel svg -->
 		<svg class="animated rotateIn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 304 304" style="enable-background:new 0 0 304 304;" xml:space="preserve">
 			<style type="text/css">
 				.orange		{fill:#FF9800;}
@@ -90,25 +93,30 @@
 		<h1 class="sectionTitle">select neutral</h1>
 	</div>
 
+	<!-- NEUTRAL COLOR SWATCHES -->
 	<div class="flex-item neutralColors">
+
+		<!-- BLACK -->
 		<svg width="32%" height="150">
 			<a xlink:href="#">
 				<rect width="100%" height="150" style="fill:#000;" />
 			</a>
 		</svg>
 
+		<!-- WHITE -->
 		<svg width="32%" height="150">
 			<a xlink:href="#">
 				<rect width="100%" height="150" style="fill:#fff;stroke-width:2;stroke:#e0e0e0" />
 			</a>
 		</svg>
 
+		<!-- BROWN -->
 		<svg width="32%" height="150">
 			<a xlink:href="#">
 				<rect width="100%" height="150" style="fill:#795548;" />
 			</a>
 		</svg>
-	</div>
+	</div> <!-- end of neutral colors -->
 
 	<!-- SET PALETTE -->
 	<div class="flex-item setPalette">
@@ -116,4 +124,5 @@
 	</div>
 
 </div> <!-- end flex container card -->
+
 </div> <!-- end of body class -->

@@ -11,6 +11,8 @@ Color selection is subject to taste or color theory, but there is no app on the 
 ### What are we making?
 Using the Dewey Color System, we are creating an app that proposes color palettes based on 32 different personality attributes. Conversely, we can identify personality traits to a user's existing color palette.
 
+### [Project Issue Board](https://trello.com/b/3k9414ZO/color-psychology)
+
 ### Stretch Goals
 * Render a complementary, monochromatic, analogous, triad, compound, or shades color palette based on the user's selected personality attribute(s).
 * Color accessibility
