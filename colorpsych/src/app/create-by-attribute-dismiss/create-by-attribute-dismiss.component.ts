@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ByAttributeService } from '../_services/index';
+import { ByAttributeService } from '../_services/by-attribute.service';
 
 
 const dichotomies = [
@@ -236,6 +236,7 @@ export class CreateByAttributeDismissComponent implements OnInit {
 		console.log(this.userPairs[id]);
 	}
 
+	//(Jankily) target specific pairs and grey them out when user dismisses them
 	toggleDismiss(id) {
 		for (let i = 0; i < this.pairs.length; i++) {
 			if (i === id) {
@@ -254,6 +255,7 @@ export class CreateByAttributeDismissComponent implements OnInit {
 		}
 	}
 
+	//Save All Un-dismissed pairs to the by-attribute service
 	getUserArray() {
 		console.log(this.userPairs);
 		for (let i = 0; i < this.userPairs.length; i++) {
@@ -263,8 +265,7 @@ export class CreateByAttributeDismissComponent implements OnInit {
 			}
 		}
 		console.log('Results Array: ' + JSON.stringify(this.resultsArray));
-		this.byAttributeService.saveDismissResults(this.resultsArray);
-		return this.resultsArray;
+		this.byAttributeService.resultsFromDismiss = this.resultsArray;
 	}
 
   constructor(private byAttributeService: ByAttributeService) { }

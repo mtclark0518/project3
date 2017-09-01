@@ -7,19 +7,21 @@ import { ByAttributeService } from '../_services/by-attribute.service';
   styleUrls: ['./create-by-attribute-choose.component.scss']
 })
 export class CreateByAttributeChooseComponent implements OnInit {
-	dismissResults: Object[] = [];
   constructor(private byAttribute: ByAttributeService) {
+    console.log(this.byAttribute.resultsFromDismiss);
 	}
 
-	displayDismissResults() {
-		console.log(this.dismissResults);
-	}
+  dismissResults: Object[] = this.byAttribute.resultsFromDismiss.slice(0);
+
+
+
   	
   ngOnInit() {
-    this.byAttribute.dismissResults$.subscribe( data => {
-  	console.log('Received data from dismiss component' + data);
-  	this.dismissResults = data;
-  	});
+   //  this.byAttribute.dismissResults$.subscribe( data => {
+  	// console.log('Received data from dismiss component' + data);
+  	// this.dismissResults = data;
+   //  console.log(this.dismissResults);
+  	// });
   }
 
 }
