@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { CreateByAttributeDismissComponent } from '../create-by-attribute-dismiss/create-by-attribute-dismiss.component';
+
 
 @Injectable()
 export class ByAttributeService {
 	constructor() {  }
 
-	private dismissResults = new Subject<Object[]>();
-	dismissResults$ = this.dismissResults.asObservable();
-
-	saveDismissResults(data: Object[]) {
-		this.dismissResults.next(data);
-		console.log(data);
+	// private dismissResults = new Subject<Object[]>();
+	// dismissResults$ = this.dismissResults.asObservable();
+	public resultsFromDismiss: object[] = [];
+	saveDismissResults(data: object[]) {
+		// this.resultsFromDismiss = this.fromDismiss.getUserArray();
+		console.log(this.resultsFromDismiss);
+		return(this.resultsFromDismiss);
 	}
+	// saveDismissResults(data: object[]) {
+		// this.dismissResults.next(data);
+		// console.log(data);
+	// }
 }
+
