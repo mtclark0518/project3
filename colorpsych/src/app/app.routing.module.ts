@@ -9,13 +9,15 @@ import { ByColorResultComponent } from './by-color-result/by-color-result.compon
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
-import { AuthGuard } from './_guards/index';
+// import { AuthGuard } from './_guards/index';
 
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UserComponent,
+  // canActivate: [AuthGuard]
+},
   { path: 'signup', component: SignupComponent },
   { path: 'create-by-color', component: CreateByColorComponent},
   { path: 'by-color-result', component: ByColorResultComponent},

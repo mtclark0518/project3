@@ -1,7 +1,7 @@
 // tslint:disable:import-spacing
 
 import { Injectable } from '@angular/core';
-// import { HttpClient, HttpHeaders, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import * as jwt_decode from 'jwt-decode';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
@@ -24,7 +24,7 @@ userLoggedIn = false;
 baseUrl = 'http://localhost:3000';
 
 // private url: string = 'api/auth';
-private headers = new Headers({ 'Content-Type' : 'application/json'});
+// private headers = new Headers({ 'Content-Type' : 'application/json'});
 
 constructor ( private http: Http) { }
 

@@ -1,13 +1,15 @@
 // tslint:disable:import-spacing
 
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
+import { CanActivate,
+  // CanActivateChild,
+  Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import { AuthenticationService, AlertService, UserService } from '../_services/index';
 import { User, AuthRequestOptions } from '../_models/index';
 
 
 @Injectable()
-export class AuthGuard implements CanActivate, CanActivateChild {
+export class AuthGuard implements CanActivate {
 
   user: User;
 
@@ -20,7 +22,8 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
   boolean {
-    return this.authenticationService.isValidUser();
+    return true;
+    // this.authenticationService.isValidUser();
 
     }
 
@@ -47,12 +50,13 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   //   return false;
   // }
 
-  canActivateChild(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot):
-    boolean {
-      return this.canActivate(route, state);
-    }
+  // canActivateChild(
+  //   route: ActivatedRouteSnapshot,
+  //   state: RouterStateSnapshot):
+  //   boolean {
+  //     return this.canActivate(route, state);
+  //   }
+
 
 
 

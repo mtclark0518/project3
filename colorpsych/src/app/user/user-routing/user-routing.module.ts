@@ -13,7 +13,6 @@ const userRoutes: Routes = [
     children: [
       {
         path: '',
-        canActivateChild: [AuthGuard],
         children: [
           { path: ':email', component: UserDashComponent }
         ]

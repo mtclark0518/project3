@@ -32,6 +32,7 @@ function create(req, res) {
 //     });
 // }
 
+
 function showByEmail(req, res) {
     console.log('showByEmail: ' + req.params);
     console.log(req.params.email);
@@ -41,7 +42,7 @@ function showByEmail(req, res) {
         }
     })
     .then(function(users) {
-        console.log(users[0].email);
+        console.log(users.email);
         if (!users) {
             res.status(404).send('ERROR: NOT FOUND');
         } else {
