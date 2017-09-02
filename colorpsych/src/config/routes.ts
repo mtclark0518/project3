@@ -17,7 +17,6 @@ router.post('/api/users', userController.create);
 router.get('/api/users/:email', userController.showByEmail);
 
 // SHOW user by id
-
 // router.get('/api/users/:id', userController.showById);
 
 
@@ -33,6 +32,7 @@ router.get('/api/palettes/:name', apisController.paletteByName);
 
 // GET all palettes for a single user
 router.get('/api/palettes/:id', apisController.palettesById);
+//router.get('api/palettes', apisController.palettesById); // if user info is in req...
 
 // POST new palette
 // request body format:
