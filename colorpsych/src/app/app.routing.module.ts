@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Http, HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user/index';
 import { LoginComponent } from './login/index';
@@ -10,21 +9,19 @@ import { ByColorResultComponent } from './by-color-result/by-color-result.compon
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
-
-// import { AuthGuard } from './_guards/index';
+import { AuthGuard } from './_guards/index';
 
 
 const routes: Routes = [
-  { path: '', component: LandingComponent,
-  // canActivate: [AuthGuard]
-},
+  { path: '', component: LandingComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent },
   { path: 'create-by-color', component: CreateByColorComponent},
   { path: 'by-color-result', component: ByColorResultComponent},
   { path: 'about', component: AboutComponent },
-  { path: 'footer', component: FooterComponent},
-  { path: 'landing', component: LandingComponent},
+  // { path: 'footer', component: FooterComponent},
+  // { path: 'landing', component: LandingComponent},
 
   // redirect home
   { path: '**', redirectTo: '' },
@@ -34,8 +31,10 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes,{ enableTracing: true }), CommonModule ],
+  imports: [ RouterModule.forRoot(routes, { enableTracing: true }), CommonModule ],
   exports: [ RouterModule ]
 
 })
 export class AppRoutingModule { }
+
+

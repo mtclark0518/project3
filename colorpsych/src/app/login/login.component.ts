@@ -1,8 +1,8 @@
-import { forEach } from '@angular/router/src/utils/collection';
 import { UserComponent } from '../user';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertService, AuthenticationService, UserService } from '../_services/index';
+import { AuthGuard } from '../_guards';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   model: any = {};
   loading = false;
   returnUrl: string;
-
+  userLoggedIn: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private alertService: AlertService,
     private userService: UserService,
+    private authGuard: AuthGuard
   ) {}
 
   ngOnInit() {
@@ -35,10 +36,15 @@ export class LoginComponent implements OnInit {
   }
   login() {
     this.loading = true;
-    console.log(this.model.email);
-    let test = this.userService.showByEmail(this.model.email);
-    console.log('test: ' + test);
-    this.router.navigate(['/users/' + this.model.email ]);
+    console.log(this.model);
+    this.userService.showByEmail(this.model.email).subscribe(data => {
+      const user = data.json();
+      console.log(user);
+      this.returnUrl = user.email || '/';
+      this.router.navigate(['/users/' + this.returnUrl ]);
+
+    });
+    }
     // .subscribe(data => {
     //   console.log(data);
     //   this.router.navigate(['/user']);
@@ -51,19 +57,19 @@ export class LoginComponent implements OnInit {
     //       this.alertService.error(error);
     //       this.loading = false;
     //     });
-    // this.authenticationService.login(this.model.email, this.model.password);
+    // this.authenticationService.login(this.model.email, this.model.password).subscribe();
     // this.router.navigate(['/user']);
-    // this.router.navigate([this.returnUrl]);
-    // subscribe(
+    // this.router.navigate([this.returnUrl])
+    // .subscribe(
     //     data => {
     //       this.router.navigate([this.returnUrl]);
     //     },
-        // error => {
-        //   this.alertService.error(error);
-        //   this.loading = false;
-        // });
+    //     error => {
+    //       this.alertService.error(error);
+    //       this.loading = false;
+    //     });
   }
-}
+
 
 
 

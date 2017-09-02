@@ -26,6 +26,7 @@ export class UserDashComponent implements OnInit {
 
       .subscribe(response => {
         console.log(response.json());
+
         this.currentUser = response.json()[0];
         console.log(this.currentUser.firstName);
       });

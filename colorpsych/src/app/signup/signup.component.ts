@@ -29,7 +29,6 @@ export class SignupComponent {
         data => {
           this.alertService.success('Registration Success Yo', true);
           this.router.navigate(['/login']);
-
         },
         error => {
           this.alertService.error(error);

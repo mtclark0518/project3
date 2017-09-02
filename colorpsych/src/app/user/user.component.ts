@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 import { User } from '../_models/index';
 import { UserService } from '../_services/index';
@@ -12,12 +12,14 @@ import { UserService } from '../_services/index';
 export class UserComponent implements OnInit {
   currentUser: User;
 
-  constructor(private userService: UserService) {
-    // this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  constructor(private userService: UserService, private router: Router) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
    }
 
   ngOnInit() {
-
+  if (this.currentUser) {
+    this.router.navigate(['/users/' + this.currentUser.email]);
+  }
   }
 
 }
