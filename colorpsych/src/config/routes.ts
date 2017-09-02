@@ -5,22 +5,6 @@ import * as passport from 'passport';
 
 import { apisController, userController } from '../controllers/index';
 
-// FOR REFERENCE
-// index
-// router.get('[route]', ['controllerName'].index);
-
-// create
-// router.post('[route]', ['controllerName'].create);
-
-// show
-// router.get('[route]', ['controllerName'].show);
-
-// update
-// router.put('[route]', ['controllerName'].update);
-
-// destroy
-// router.delete('[route]', ['controllerName'].destroy);
-
 
 // USER ROUTES
 // GET all users
@@ -37,7 +21,6 @@ router.get('/api/users/:email', userController.showByEmail);
 // router.get('/api/users/:id', userController.showById);
 
 
-
 // COLOR/PALETTE/ATTRIBUTE ROUTES
 // GET color by name
 router.get('/api/colors/:name', apisController.colorByName);
@@ -52,6 +35,14 @@ router.get('/api/palettes/:name', apisController.paletteByName);
 router.get('/api/palettes/:id', apisController.palettesById);
 
 // POST new palette
+// request body format:
+// {
+//   name: your_palette_name 
+//   format: 'color' || 'attrib' // palette is organized by color or attributes
+//   notes:  your_notes // optional
+//   colors: your_palette_colors[ 'color1', 'color2', 'color3' ] // if format = 'color'
+//   attribs: your_palette_attribs[ 'attrib1', 'attrib2' ] // if format = 'attrib'
+// }
 router.post('/api/palettes', apisController.paletteNew);
 
 
