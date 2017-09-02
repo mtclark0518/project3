@@ -141,7 +141,7 @@ const colors = [
 ];
 
 
-var attributes = [
+const attributes = [
   {
     name: 'Freethinking',
     description: 'attract out-of-box thinking',
@@ -378,8 +378,8 @@ function findColor(colorName) {
 }
 
 function colorByName(req, res) {
-  const where  = findColor(req.params.name);
-  console.log('colorByName: ' + colors[where]);
+  let where = findColor(req.params.name);
+  console.log('colorByName: ' + colors[where].name);
   if (where >= 0) {
     res.json(colors[where]);
   } else {
@@ -398,8 +398,8 @@ function findAttrib(attribName) {
 }
 
 function attribByName(req, res) {
-  const where  = findAttrib(req.params.name);
-  console.log('attribByName: ' + attributes[where]);
+  let where = findAttrib(req.params.name);
+  console.log('attribByName: ' + attributes[where].name);
   if (where >= 0) {
     res.json(attributes[where]);
   } else {
