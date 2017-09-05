@@ -39,6 +39,10 @@ export class UserService {
     // return this.http.post('/api/users', user, this.jwt()).map((response: Response) => response.json());
   }
 
+  newLogin(user: User) {
+    console.log(user);
+    return this.http.post(`${this.baseUrl}/api/login/`, user);
+  }
   // update(user: User) {
   //   return
   // }

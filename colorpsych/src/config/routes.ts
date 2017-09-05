@@ -21,7 +21,8 @@ import { apisController, userController } from '../controllers/index';
 // destroy
 // router.delete('[route]', ['controllerName'].destroy);
 
-
+// LOGIN ROUTES
+router.post('/api/login', userController.login);
 // USER ROUTES
 // GET all users
 router.get('/api/users', userController.userIndex);

@@ -17,7 +17,15 @@ module.exports = function(sequelize, Sequelize) {
         },
         lastName: {
             type: Sequelize.STRING
-        }
+        },
+        // setterMethods: {
+        //     hash(value) {
+        //         const password = value;
+        //         console.log(password);
+        //         // this.setDataValue('password', bcrypt) bcrypt.hashSync(this.password;
+        //     }
+        // },
+
     });
     model.prototype.hash = function(password) {
         return bcrypt.hashSync(password, bcrypt.genSaltSync(8));

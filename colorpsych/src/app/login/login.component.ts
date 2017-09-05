@@ -34,7 +34,15 @@ export class LoginComponent implements OnInit {
     this.authenticationService.logout();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
-  login() {
+  
+  login(){
+    this.userService.newLogin(this.model).subscribe(data => {
+      const user = data.json();
+      console.log(user);
+      console.log('ok you got it buddy');
+    });
+  }
+  newLogin() {
     this.loading = true;
     console.log(this.model);
     this.userService.showByEmail(this.model.email).subscribe(data => {
