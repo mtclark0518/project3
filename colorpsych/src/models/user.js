@@ -20,7 +20,7 @@ module.exports = function(sequelize, Sequelize) {
         }
     });
     model.prototype.hash = function(password) {
-        return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+        return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
     };
     model.prototype.validPassword = function(password) {
         return bcrypt.compareSync(password, this.password);

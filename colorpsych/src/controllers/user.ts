@@ -1,10 +1,16 @@
 import * as passport from 'passport';
 import * as passportJWT from 'passport-jwt';
 import { db } from '../models';
-
+import * as bcrypt from 'bcrypt-nodejs';
 const User = db.models.User;
 
+function hash(password: string) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+}
 
+function validPassword(password: string) {
+    return bcrypt.compareSync(password, this.password);
+}
 
 // GET
 function userIndex(req, res) {
@@ -14,7 +20,22 @@ function userIndex(req, res) {
 }
 // POST
 function create(req, res) {
-    User.create(req.body).then(function(user){
+    console.log('hi function create is here');
+    console.log(req.body.password);
+    let pass = req.body.password;
+    let hashPass = hash(pass);
+    console.log(hashPass);
+    User.create({
+        firstName : req.body.firstName,
+        lastName : req.body.lastName,
+        email : req.body.email,
+        password : hashPass
+    })
+    .then(function(user){
+    console.log(user.dataValues.password);
+    console.log('im still with ya bitch');
+    let pass = user.dataValues.password;
+    console.log(user);
     if (!user) {res.send(res, 'not saved');
     } else {
         res.json(user);
