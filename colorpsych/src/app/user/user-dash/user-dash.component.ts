@@ -11,8 +11,6 @@ import { UserService } from '../../_services/index';
 })
 export class UserDashComponent implements OnInit {
 
-
-
   currentUser: User;
 
   constructor(private userService: UserService,
@@ -20,14 +18,11 @@ export class UserDashComponent implements OnInit {
   ) { }
 
     ngOnInit() {
-    // this.userService.showByEmail(this.model.email);
       this.route.params.forEach( param => {
       this.userService.showByEmail(param.email)
 
       .subscribe(response => {
-        console.log(response.json());
-
-        this.currentUser = response.json()[0];
+        this.currentUser = response.json();
         console.log(this.currentUser.firstName);
       });
     });

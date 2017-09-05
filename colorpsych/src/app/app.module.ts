@@ -22,8 +22,8 @@ import { AppRoutingModule } from './app.routing.module';
 
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
-import { AuthRequestOptions } from './_models/index';
-import { MyInterceptor } from './_interceptors/index';
+// import { AuthRequestOptions } from './_models/index';
+// import { MyInterceptor } from './_interceptors/index';
 
 
 
@@ -56,7 +56,7 @@ import { MyInterceptor } from './_interceptors/index';
     AuthGuard,
     UserService,
     // { provide: AuthRequestOptions,vuseClass: AuthRequestOptions, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}
+    // {provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

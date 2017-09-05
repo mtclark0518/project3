@@ -40,9 +40,10 @@ export class LoginComponent implements OnInit {
     this.userService.showByEmail(this.model.email).subscribe(data => {
       const user = data.json();
       console.log(user);
+      console.log(user.firstName + ': ' + user.id + ' is my id')
       this.returnUrl = user.email || '/';
+      console.log(this.returnUrl);
       this.router.navigate(['/users/' + this.returnUrl ]);
-
     });
     }
     // .subscribe(data => {

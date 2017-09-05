@@ -15,9 +15,8 @@ import { LandingComponent } from './landing/landing.component';
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'users', component: UserComponent,
   // canActivate: [AuthGuard]
-},
+
   { path: 'signup', component: SignupComponent },
   { path: 'create-by-color', component: CreateByColorComponent},
   { path: 'by-color-result', component: ByColorResultComponent},
@@ -33,7 +32,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes, { enableTracing: true }), CommonModule ],
+  imports: [ RouterModule.forRoot(routes), CommonModule ],
   exports: [ RouterModule ]
 
 })

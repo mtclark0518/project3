@@ -34,19 +34,21 @@ function create(req, res) {
 
 
 function showByEmail(req, res) {
-    console.log('showByEmail: ' + req.params);
+    console.log(req.params);
     console.log(req.params.email);
-    User.findAll({
+    User.findOne({
         where: {
             email: req.params.email
         }
     })
-    .then(function(users) {
-        console.log(users.email);
-        if (!users) {
+    .then(function(user) {
+        console.log(user.email);
+        console.log('this is where i fuck up');
+        if (!user) {
             res.status(404).send('ERROR: NOT FOUND');
         } else {
-            res.json(users);
+            console.log(user);
+            res.json(user);
         }
     });
 }
