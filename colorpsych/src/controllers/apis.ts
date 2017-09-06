@@ -141,7 +141,7 @@ const colors = [
 ];
 
 
-var attributes = [
+const attributes = [
   {
     name: 'Freethinking',
     description: 'attract out-of-box thinking',
@@ -378,8 +378,8 @@ function findColor(colorName) {
 }
 
 function colorByName(req, res) {
-  const where  = findColor(req.params.name);
-  console.log('colorByName: ' + colors[where]);
+  let where = findColor(req.params.name);
+  console.log('colorByName: ' + colors[where].name);
   if (where >= 0) {
     res.json(colors[where]);
   } else {
@@ -398,8 +398,8 @@ function findAttrib(attribName) {
 }
 
 function attribByName(req, res) {
-  const where  = findAttrib(req.params.name);
-  console.log('attribByName: ' + attributes[where]);
+  let where = findAttrib(req.params.name);
+  console.log('attribByName: ' + attributes[where].name);
   if (where >= 0) {
     res.json(attributes[where]);
   } else {
@@ -408,8 +408,18 @@ function attribByName(req, res) {
 }
 
 
+// request body format:
+// {
+//   name: your_palette_name 
+//   format: 'color' || 'attrib' // palette is organized by color or attributes
+//   notes:  your_notes // optional
+//   colors: your_palette_colors[ 'color1', 'color2', 'color3' ] // if format = 'color'
+//   attribs: your_palette_attribs[ 'attrib1', 'attrib2' ] // if format = 'attrib'
+// }
+
 function paletteNew(req, res) {
   console.log('paletteNew: ' + req.body.name);
+  console.log(req);
   Palette.findOrCreate({
     where: {
       name: req.body.name,
@@ -448,7 +458,6 @@ function palettesById(req, res) {
     }
   })
 }
-
 
 function paletteByName(req, res) {
   console.log('paletteByName: ' + req.params);

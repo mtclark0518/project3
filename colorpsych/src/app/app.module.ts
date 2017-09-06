@@ -11,7 +11,7 @@ import { LoginComponent } from './login/index';
 import { SignupComponent } from './signup/index';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LandingComponent } from './landing/landing.component';
-import { CreateByAttributeComponent } from './create-by-attribute/create-by-attribute.component';
+import { CreateByAttributeDismissComponent } from './create-by-attribute-dismiss/create-by-attribute-dismiss.component';
 import { CreateByColorComponent } from './create-by-color/create-by-color.component';
 import { ByColorResultComponent } from './by-color-result/by-color-result.component';
 import { AboutComponent } from './about/about.component';
@@ -21,10 +21,13 @@ import { AppRoutingModule } from './app.routing.module';
 
 
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
 // import { AuthRequestOptions } from './_models/index';
 // import { MyInterceptor } from './_interceptors/index';
 
+
+import { AuthenticationService, UserService, ByAttributeService } from './_services/index';
+import { CreateByAttributeChooseComponent } from './create-by-attribute-choose/create-by-attribute-choose.component';
+// import { AuthGuard } from './_guards/index';
 
 
 @NgModule({
@@ -36,10 +39,12 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     CreateByColorComponent,
     ByColorResultComponent,
     NavigationComponent,
-    CreateByAttributeComponent,
+    CreateByAttributeDismissComponent,
+    CreateByAttributeChooseComponent,
     AboutComponent,
     FooterComponent,
     LandingComponent
+
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'colorpsych'}),
@@ -51,12 +56,11 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
   ],
   providers: [
     AuthGuard,
-    AlertService,
     AuthenticationService,
-    AuthGuard,
     UserService,
     // { provide: AuthRequestOptions,vuseClass: AuthRequestOptions, multi: true},
-    // {provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}
+    // {provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true},
+    ByAttributeService
   ],
   bootstrap: [AppComponent]
 })

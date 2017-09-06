@@ -1,6 +1,18 @@
 import { db } from '../models';
 let DB = db.models;
 
+/*
+ * The colors and attributes tables are used to seed the color_psych data-
+ * base. colors.attributes[] is meant to init the color-has-many-attributes
+ * relationships; attributes.colors[] is meant to init the attributes-has-
+ * many colors relationships.
+ *
+ * Currently, some of the colors.attributes items are commented out because
+ * the seeding was only working for brand new color and/or attribute records;
+ * if the color/attribute was created previously, either the relationship was
+ * not created or a duplicate relationship entry was created (based on whether
+ * color.name/attribute.name was set to unique or not)
+ */
 
 var colors = [
   {
@@ -948,6 +960,11 @@ var attributes = [
 ];
 
 
+/*
+ * creates those color/attribute relationships that weren't generated in
+ * the initial color seeding
+ */
+
 // var associationsCreate = function () {
 //   for (var i = 0; i < attributes.length; i++) {
 //     for (var j = 0; j < attributes[i].colors.length; j++) {
@@ -976,36 +993,14 @@ var colorCreate = function() {
   return DB.Color.bulkCreate(colors, { include: [{ association: DB.Color.Attribute }] } )
 };
 
-// var colorCreate2 = function() {
-//   return DB.Color.create(colors[1], { include: [{ association: DB.Color.Attribute }] } )
-// };
 
-// var colorCreate3 = function() {
-//   return DB.Color.create(colors[2], { include: [{ association: DB.Color.Attribute }] } )
-// };
-
+/*
+ * Do the actual seeding of the database!
+ */
+ 
 colorCreate()
-// .then(colorCreate2())
-// .then(colorCreate3())
-
 .then(attribCreate())
 // .then(associationsCreate())
-
-// DB.Color.create(colors[0], { include: [{ association: DB.Color.Attribute }] } )
-// .then(DB.Color.create(colors[1], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[2], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[3], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[4], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[5], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[6], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[7], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[8], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[9], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[10], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[11], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[12], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[13], { include: [{ association: DB.Color.Attribute }] } ))
-// .then(DB.Color.create(colors[14], { include: [{ association: DB.Color.Attribute }] } ))
 .then(function() {
   process.exit();
 });

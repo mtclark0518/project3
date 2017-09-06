@@ -2,7 +2,6 @@ import { UserComponent } from '../user';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService, UserService } from '../_services/index';
-import { AuthGuard } from '../_guards';
 
 
 @Component({
@@ -22,12 +21,11 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private authGuard: AuthGuard
   ) {}
 
   ngOnInit() {
     // reset login status
-    this.logout();
+    // this.logout();
   }
   logout() {
     this.userService.logout();

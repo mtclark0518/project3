@@ -1,0 +1,70 @@
+<router-outlet></router-outlet>
+
+<div class="container-fluid">
+<div class="body">
+	
+		<h4 class="flex-item pageTitle">Create By Branding Identity</h4>
+		<div class="card">
+
+		<h2>Create A Pallette Based On Your Brand's Identity</h2>
+		<p>We've compiled a thorough list of attributes for your branding identity that correspond to color values according to the Dewey Color System.</p>
+		<p>For this first step, dismiss any of the attribute pairs that do not immediately strike you as relevant to your brand. We'll get to ranking and selecting one out of each pair in the next step.</p>
+
+		<div class="colorBar">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 20">
+							<defs>
+							<style>
+								.cls-1{fill:#cddc39;}
+								.cls-2{fill:#4caf50;}
+								.cls-3{fill:#009688;}
+								.cls-4{fill:#2196f3;}
+								.cls-5{fill:#3f51b5;}
+								.cls-6{fill:#9c27b0;}
+								.cls-7{fill:#e91e63;}
+								.cls-8{fill:#f44336;}
+								.cls-9{fill:#ff5722;}
+								.cls-10{fill:#ff9800;}
+								.cls-11{fill:#ffd600;}
+								.cls-12{fill:#ffeb3b;}	
+							</style>
+							</defs>
+							<title>color-bar</title>
+							<rect class="cls-1" width="66.67" height="10"/>
+							<rect class="cls-2" x="66.67" width="66.67" height="10"/>
+							<rect class="cls-3" x="133.33" width="66.67" height="10"/>
+							<rect class="cls-4" x="200" width="66.67" height="10"/>
+							<rect class="cls-5" x="266.67" width="66.67" height="10"/>
+							<rect class="cls-6" x="333.33" width="66.67" height="10"/>
+							<rect class="cls-7" x="400" width="66.67" height="10"/>
+							<rect class="cls-8" x="466.67" width="66.67" height="10"/>
+							<rect class="cls-9" x="533.33" width="66.67" height="10"/>
+							<rect class="cls-10" x="600" width="66.67" height="10"/>
+							<rect class="cls-11" x="666.67" width="66.67" height="10"/>
+							<rect class="cls-12" x="733.33" width="66.67" height="10"/>
+						</svg>
+		</div> <!-- end color bar svg -->
+
+		<div *ngFor="let pair of pairs; let id = index">
+
+			<div class="dismissable_button_group" id="which{{id}}">
+				<button (click)="toggleDismiss(id)" class="x_button">
+					<div class="x">X</div>
+				</button>
+				<div class="attr_pair">
+					<button class="border_bottom">
+						<h4>{{pair.descriptor1.attribute}}</h4>
+						<h5>{{pair.descriptor1.description}}</h5>
+					</button>
+
+					<button>
+					<h4>{{pair.descriptor2.attribute}}</h4>
+					<h5>{{pair.descriptor2.description}}</h5>
+					</button>
+				</div>
+			</div>
+
+		</div><!-- Attribute Pairs -->
+		<button class="submit btn btn-elegant waves-light hoverable" (click)="getUserArray()" routerLink="/create-by-attribute-choose">Next Step</button>
+	</div>
+</div><!-- Body -->
+</div>

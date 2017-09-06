@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+<div class="body card">
+	<h2>Either / Or</h2>
+	<p>Now that all the irrelevant descriptors are gone, it's time to choose which of each pair describes your brand. We'll rank your favorite attributes after that.</p>
+	<div *ngIf="dismissResults.length > 0"><!-- Don't render until we get user's chosen attributes from service-->
+	
+
+		<div *ngFor="let pair of dismissResults; let id = index">
+
+			<div class="dismissable_button_group" id="which{{id}}">
+				<div class="attr_pair">
+					<button class="border_bottom">
+						<h4>{{pair.descriptor1.attribute}}</h4>
+						<h5>{{pair.descriptor1.description}}</h5>
+					</button>
+					<button>
+					<h4>{{pair.descriptor2.attribute}}</h4>
+					<h5>{{pair.descriptor2.description}}</h5>
+					</button>
+				</div>
+			</div>
+
+		</div><!-- Attribute Pairs -->
+	
+	<!-- <button (click)="getUserArray()" routerLink="/ --><!-- create-by-attribute-choose">Submit</button> -->
+	</div>
+</div><!-- Body -->
