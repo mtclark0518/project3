@@ -5,6 +5,8 @@ import * as passport from 'passport';
 
 import { apisController, userController } from '../controllers/index';
 
+// LOGIN ROUTES
+router.post('/api/login', userController.login);
 
 // USER ROUTES
 // GET all users
@@ -32,7 +34,7 @@ router.get('/api/palettes/:name', apisController.paletteByName);
 
 // GET all palettes for a single user
 router.get('/api/palettes/:id', apisController.palettesById);
-//router.get('api/palettes', apisController.palettesById); // if user info is in req...
+// router.get('api/palettes', apisController.palettesById); // if user info is in req...
 
 // POST new palette
 // request body format:

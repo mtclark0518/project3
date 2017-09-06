@@ -3,33 +3,33 @@ import 'zone.js/dist/zone-node';
 import { platformServer, renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
 import { AppServerModuleNgFactory } from '../dist/ngfactory/src/app/app.server.module.ngfactory';
-
-
 import { ngExpressEngine } from '@ngx-universal/express-engine';
 import { AppServerModule } from './app/app.server.module';
 
-
 import * as express from 'express';
+import * as _ from 'lodash';
+import * as jwt from 'jsonwebtoken';
 import * as session from 'express-session';
 import * as bodyParser from 'body-parser';
-import * as passport from 'passport';
-
-// import * as flash from 'connect-flash';
 import * as morgan from 'morgan';
-// import class db from './models';
+import * as passport from 'passport';
+import * as passportJWT from 'passport-jwt';
+
+const ExtractJwt = passportJWT.ExtractJwt;
+const JwtStrategy = passportJWT.Strategy;
+// import * as flash from 'connect-flash';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-
+import * as db from './models/index';
 
 import { router as expressRouter } from './config/routes';
-
-import * as db from './models/index';
 
 enableProdMode();
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded(true));
 app.use(morgan('dev'));
 
 
@@ -61,13 +61,12 @@ app.get('/', (req, res) => {
 
 // require('./config/passport.js')(passport);
 
-app.use(function(req, res, next) {
-    res.locals.currentUser = req.user;
-    next();
-});
+// app.use(function(req, res, next) {
+//     res.locals.currentUser = req.user;
+//     next();
+// });
 
 app.use(expressRouter);
-
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('all systems go');

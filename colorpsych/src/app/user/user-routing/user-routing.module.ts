@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from '../user.component';
 import { UserDashComponent } from '../user-dash/user-dash.component';
+import { AuthGuard } from '../../_guards/index';
+
 
 const userRoutes: Routes = [
   {
@@ -10,12 +12,17 @@ const userRoutes: Routes = [
     component: UserComponent,
     children: [
       {
-        path: ':email',
-        component: UserDashComponent
+        path: '',
+        children: [
+          { path: ':email', component: UserDashComponent }
+        ]
       }
     ]
   }
 ];
+
+
+
 
 
 @NgModule({
@@ -24,6 +31,7 @@ const userRoutes: Routes = [
     RouterModule.forChild(userRoutes)
 
   ],
+  providers: [AuthGuard],
   exports: [
     RouterModule
   ]

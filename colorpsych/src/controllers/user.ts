@@ -1,10 +1,12 @@
+/////////////-----------------------
+// --------------------------------
+//// USER CONTROLLER----------------
+
 import * as passport from 'passport';
 import * as passportJWT from 'passport-jwt';
 import { db } from '../models';
-
+import * as bcrypt from 'bcrypt-nodejs';
 const User = db.models.User;
-
-
 
 // GET
 function userIndex(req, res) {
@@ -14,38 +16,69 @@ function userIndex(req, res) {
 }
 // POST
 function create(req, res) {
-    User.create(req.body).then(function(user){
-    if (!user) {res.send(res, 'not saved');
-    } else {
-        res.json(user);
-    }
+    console.log('hi function create is here');
+    console.log(req.body.password);
+    let pass;
+    pass = req.body.password;
+    User.create({
+        firstName : req.body.firstName,
+        lastName : req.body.lastName,
+        email : req.body.email,
+    })
+    .then(function(user){
+        console.log(pass);
+        let hashPass;
+        hashPass = user.hash(pass);
+        console.log(hashPass);
+
+        user.updateAttributes({
+            password : hashPass
+        })
+        .then(function() {
+            console.log(user.dataValues.password);
+            if (!user) {res.send(res, 'not saved');
+        } else {
+            res.json(user);
+            console.log('successfully created user with hashed password. you\'re ammmaaaaazing ' + user.dataValues.lastName);
+        }
+    });
   });
 }
-// function findUser(email) {
-//     User.findAll().then(function(users) {
-//         for (let i = 0; i < users.length; i++) {
-//             if (users[i].email === email) {
-//             return email;
-//             }
-//         }
-//     return -1;
-//     });
-// }
+function login(req, res) {
+    console.log('hi from login function');
+    User.findOne({where: {email : req.body.email}})
+    .then(function(user) {
+        let encrypted, attempted;
+        encrypted = user.dataValues.password;
+        attempted = req.body.password;
+        console.log('atPWD:: ' + attempted + 'encPWD:: ' + encrypted);
+        console.log(user.validPassword(attempted, encrypted));
+        if (user.validPassword(attempted, encrypted)) {
+            res.json(user);
+            console.log(user);
+        } else {
+            return console.log(': error');
+        }
+        // const auth = user.validPassword(encPWD, atPWD);
+        // console.log(auth);
+        });
+
+}
 
 function showByEmail(req, res) {
-    console.log('showByEmail: ' + req.params);
     console.log(req.params.email);
-    User.findAll({
+    User.findOne({
         where: {
             email: req.params.email
         }
     })
-    .then(function(users) {
-        console.log(users[0].email);
-        if (!users) {
+    .then(function(user) {
+        console.log(user.email);
+        if (!user) {
             res.status(404).send('ERROR: NOT FOUND');
         } else {
-            res.json(users);
+            console.log(user);
+            res.json(user);
         }
     });
 }
@@ -127,6 +160,7 @@ function showById(req, res) {
 const userController = <any>{};
     userController.userIndex = userIndex;
     userController.create = create;
+    userController.login = login;
     userController.showByEmail = showByEmail;
     userController.showById = showById;
     // getLogout: getLogout,
