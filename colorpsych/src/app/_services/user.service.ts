@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http/';
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-
-import { Observable } from 'rxjs/Observable';
 // observables
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 // operators
 import 'rxjs/add/operator/do';
@@ -38,30 +37,16 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/api/users/`, user);
     // return this.http.post('/api/users', user, this.jwt()).map((response: Response) => response.json());
   }
-
-  newLogin(user: User) {
+// POST a login attempt
+  login(user: User) {
     console.log(user);
     return this.http.post(`${this.baseUrl}/api/login/`, user);
   }
-  // update(user: User) {
-  //   return
-  // }
 
-
-
-  delete(id: number) {
-    // return this.http.delete('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-
+// LOGOUT
+  logout(): void {
+    console.log(localStorage.getItem('currentUser'));
+    localStorage.removeItem('currentUser');
   }
 
- 
-  // HELPER METHODS
-
-  // private jwt() {
-  //   let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  //   if (currentUser && currentUser.token) {
-  //     let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-  //     return new RequestOptions({headers: headers});
-  //   }
-  // }
 }

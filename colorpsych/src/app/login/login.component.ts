@@ -1,7 +1,7 @@
 import { UserComponent } from '../user';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AlertService, AuthenticationService, UserService } from '../_services/index';
+import { AuthenticationService, UserService } from '../_services/index';
 import { AuthGuard } from '../_guards';
 
 
@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService,
     private userService: UserService,
     private authGuard: AuthGuard
   ) {}
@@ -31,53 +30,23 @@ export class LoginComponent implements OnInit {
     this.logout();
   }
   logout() {
-    this.authenticationService.logout();
+    this.userService.logout();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
-  
-  login(){
-    this.userService.newLogin(this.model).subscribe(data => {
-      const user = data.json();
-      console.log(user);
-      console.log('ok you got it buddy');
-    });
-  }
-  newLogin() {
+
+  login() {
     this.loading = true;
-    console.log(this.model);
-    this.userService.showByEmail(this.model.email).subscribe(data => {
+    this.userService.login(this.model).subscribe(data => {
       const user = data.json();
       console.log(user);
-      console.log(user.firstName + ': ' + user.id + ' is my id')
-      this.returnUrl = user.email || '/';
-      console.log(this.returnUrl);
-      this.router.navigate(['/users/' + this.returnUrl ]);
+      const currentUser = JSON.stringify(user);
+      localStorage.setItem('currentUser', currentUser);
+      console.log(localStorage.getItem('currentUser'));
+      console.log('ok you got it buddy');
+      this.router.navigate(['/users']);
     });
-    }
-    // .subscribe(data => {
-    //   console.log(data);
-    //   this.router.navigate(['/user']);
-    // });
-    // this.userService.showById()
-    // .subscribe( data => {
-    //   console.log(data);
-    // },
-    //     error => {
-    //       this.alertService.error(error);
-    //       this.loading = false;
-    //     });
-    // this.authenticationService.login(this.model.email, this.model.password).subscribe();
-    // this.router.navigate(['/user']);
-    // this.router.navigate([this.returnUrl])
-    // .subscribe(
-    //     data => {
-    //       this.router.navigate([this.returnUrl]);
-    //     },
-    //     error => {
-    //       this.alertService.error(error);
-    //       this.loading = false;
-    //     });
   }
+}
 
 
 

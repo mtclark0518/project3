@@ -81,7 +81,6 @@ redirectUrl: string;
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.userLoggedIn = true;
         console.log(localStorage.getItem('currentUser'));
-        console.log("heyyy fuck you this is where i show up");
         return this.userLoggedIn;
       });
   }

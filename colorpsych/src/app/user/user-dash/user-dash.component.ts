@@ -1,5 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../_models/index';
 
 import { UserService } from '../../_services/index';
@@ -14,10 +15,17 @@ export class UserDashComponent implements OnInit {
   currentUser: User;
 
   constructor(private userService: UserService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
-    ngOnInit() {
+  logout(): void {
+    this.userService.logout();
+    console.log('user logged out');
+    this.router.navigate(['/login']);
+    }
+
+  ngOnInit() {
       this.route.params.forEach( param => {
       this.userService.showByEmail(param.email)
 
@@ -27,5 +35,4 @@ export class UserDashComponent implements OnInit {
       });
     });
   }
-
 }

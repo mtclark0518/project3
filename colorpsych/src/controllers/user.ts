@@ -1,16 +1,12 @@
+/////////////-----------------------
+// --------------------------------
+//// USER CONTROLLER----------------
+
 import * as passport from 'passport';
 import * as passportJWT from 'passport-jwt';
 import { db } from '../models';
 import * as bcrypt from 'bcrypt-nodejs';
 const User = db.models.User;
-
-// function hash(password: string) {
-//     return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
-// }
-
-// function validPassword(password: string) {
-//     return bcrypt.compareSync(password, this.password);
-// }
 
 // GET
 function userIndex(req, res) {
@@ -22,7 +18,8 @@ function userIndex(req, res) {
 function create(req, res) {
     console.log('hi function create is here');
     console.log(req.body.password);
-    let pass = req.body.password;
+    let pass;
+    pass = req.body.password;
     User.create({
         firstName : req.body.firstName,
         lastName : req.body.lastName,
@@ -30,7 +27,8 @@ function create(req, res) {
     })
     .then(function(user){
         console.log(pass);
-        let hashPass = user.hash(pass);
+        let hashPass;
+        hashPass = user.hash(pass);
         console.log(hashPass);
 
         user.updateAttributes({
@@ -41,6 +39,7 @@ function create(req, res) {
             if (!user) {res.send(res, 'not saved');
         } else {
             res.json(user);
+            console.log('successfully created user with hashed password. you\'re ammmaaaaazing ' + user.dataValues.lastName);
         }
     });
   });
@@ -49,27 +48,24 @@ function login(req, res) {
     console.log('hi from login function');
     User.findOne({where: {email : req.body.email}})
     .then(function(user) {
-        console.log(user);
-        let pass = user.dataValues.password;
-        console.log(user.validPassword(pass));
-        res.json(pass);
-    });
+        let encrypted, attempted;
+        encrypted = user.dataValues.password;
+        attempted = req.body.password;
+        console.log('atPWD:: ' + attempted + 'encPWD:: ' + encrypted);
+        console.log(user.validPassword(attempted, encrypted));
+        if (user.validPassword(attempted, encrypted)) {
+            res.json(user);
+            console.log(user);
+        } else {
+            return console.log(': error');
+        }
+        // const auth = user.validPassword(encPWD, atPWD);
+        // console.log(auth);
+        });
 
 }
-// function findUser(email) {
-//     User.findAll().then(function(users) {
-//         for (let i = 0; i < users.length; i++) {
-//             if (users[i].email === email) {
-//             return email;
-//             }
-//         }
-//     return -1;
-//     });
-// }
-
 
 function showByEmail(req, res) {
-    console.log(req.params);
     console.log(req.params.email);
     User.findOne({
         where: {
@@ -78,7 +74,6 @@ function showByEmail(req, res) {
     })
     .then(function(user) {
         console.log(user.email);
-        console.log('this is where i fuck up');
         if (!user) {
             res.status(404).send('ERROR: NOT FOUND');
         } else {

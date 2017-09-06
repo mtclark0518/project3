@@ -1,3 +1,7 @@
+// ----------------------------------
+/////////////-----------------------
+//// USER MODEL---------------------
+
 var bcrypt = require('bcrypt-nodejs');
 
 module.exports = function(sequelize, Sequelize) {
@@ -30,8 +34,8 @@ module.exports = function(sequelize, Sequelize) {
     model.prototype.hash = function(password) {
         return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
     };
-    model.prototype.validPassword = function(password) {
-        return bcrypt.compareSync(password, this.password);
+    model.prototype.validPassword = function(attempted, encrypted) {
+        return bcrypt.compareSync(attempted, encrypted);
     };
     return model;
 };
