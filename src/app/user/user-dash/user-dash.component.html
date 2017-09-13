@@ -1,0 +1,21 @@
+<router-outlet></router-outlet>
+<div class="body">
+    <div class="container">
+
+        <div class="flex-container">
+            <h4 class="flex-item pageTitle">You're logged in</h4>
+        </div>
+
+
+
+
+        <div *ngIf="currentUser" class="dash_content_container">
+            <h3>{{currentUser.firstName}}'s profile</h3>
+            <div id="saved_palettes">
+                <h3>View Your Saved Palettes</h3>
+
+            </div>
+            <p><a (click)="logout()">Logout</a></p>
+        </div>
+    </div>
+</div>
