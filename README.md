@@ -28,8 +28,27 @@ Using the Dewey Color System, we are creating an app that proposes color palette
 3. Build and run the app (npm start)
 4. App is running at localhost:3000
 
-### To run anywhere in the world:
+### To see anywhere in the world:
 [https://hidden-citadel-94665.herokuapp.com/](https://hidden-citadel-94665.herokuapp.com/)
+
+Heroku Notes:
+To get the build running on Heroku, you need to build the app on your local machine, and then push the build. Here's how to do it:
+1. Make a new branch
+2. Build the branch like normal (npm start)
+3. Make sure it runs
+4. Edit package.json and delete the following line from the scripts section:      
+      "prestart": "ng build --prod && ngc",
+5. Commit the changed package.json to your branch (but NOT TO THE MASTER!!!!!)
+6. Be sure to push to your branch (git push origin <yourBranch>)
+7. And now push your branch to Heroku: git push heroku <yourBranch>:master
+   The ':master' is important because it pushes your branch to Heroku's master branch; without it, you're pushing your branch to a branch on Heroku, and Heroku won't build/run from a branch.
+8. The app is on Heroku!
+
+If you need to clean out the database and start over, here's how to do that:
+1. Start an instance of the database locally, as described in the 'to run locally' instructions above
+2. Replace the <username> with yours, and run
+  heroku pg:push postgres://<username>@localhost:5432/color_psych DATABASE_URL --app hidden-citadel-94665
+
 
 ## Data Models
 ### Entity Relationship Diagram (ERD)
