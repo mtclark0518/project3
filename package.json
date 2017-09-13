@@ -3,7 +3,6 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "prestart": "ng build --prod && ngc",
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "ts-node src/server.ts"
     },
