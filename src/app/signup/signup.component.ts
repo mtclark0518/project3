@@ -21,12 +21,15 @@ export class SignupComponent {
     private userService: UserService,
   ) { }
 
-  register() {
+register() {
     this.loading = true;
-    this.userService.create(this.model)
-      .subscribe(
-        data => {
-          this.router.navigate(['/login']);
+    this.userService.create(this.model).subscribe(data => {
+      const user = data.json();
+      console.log(user);
+      const currentUser = JSON.stringify(user)
+      localStorage.setItem('currentUser', currentUser);
+      console.log(localStorage.getItem('currentUser'))    
+      this.router.navigate(['/users']);
         },
         error => {
           this.loading = false;
