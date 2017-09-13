@@ -2,15 +2,14 @@
     "name": "project3",
     "version": "0.0.0",
     "license": "MIT",
-    "main": "server.js",
     "scripts": {
+        "prestart": "ng build --prod && ngc",
         "ng": "ng",
         "build": "ng build",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "start": "node server.js",
-        "test": "ng test",
-        "postinstall": "ng build --aot -prod"
+        "start": "ts-node src/server.ts",
+        "test": "ng test"
     },
     "engines": {
         "node": "8.1.4",
