@@ -4,8 +4,8 @@ import * as Sequelize from 'sequelize';
 
 
 var sequelize = new Sequelize(process.env.DATABASE_URL || 
-'postgres://conk@localhost:5432/color_psych');
-// ian // 'postgres://nordeck@localhost:5432/color_psych');
+'postgres://TheTDrive@localhost:5432/color_psych');
+// ian // 'postgres://conk@localhost:5432/color_psych');
 
 
 var User = sequelize.import("./user");
