@@ -21,7 +21,7 @@ export class SignupComponent {
     private userService: UserService,
   ) { }
 
-  register() {
+register() {
     this.loading = true;
     this.userService.create(this.model).subscribe(data => {
       const user = data.json();
